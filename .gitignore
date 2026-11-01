@@ -1,0 +1,2 @@
+# SSH private key files, including files in subfolders
+*.key

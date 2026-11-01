@@ -18,7 +18,7 @@ Runtime: Spark **3.5.9**, Java **17.0.21**, Python **3.11.18**. Spark is install
 
 ## Connect from your computer
 
-The commands below use an authorized SSH private key at `~/.ssh/6893.key` and the remote user `ubuntu`. If your authorized key has a different filename, replace the key path. Keep private keys on your own machine and out of Git; each teammate should use their own authorized key.
+The team shares the existing authorized SSH private key, `6893.key`. Each teammate should receive a copy through a private channel and save it at `~/.ssh/6893.key` on their own computer. Everyone connects as `ubuntu` with the same account permissions. No additional server configuration is needed. Keep the key out of Git; the repository ignores `*.key` files in every folder.
 
 Run in your **local terminal**:
 
