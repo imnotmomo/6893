@@ -143,7 +143,42 @@ sudo journalctl -u 6893-spark-worker -n 80 --no-pager
 
 The Spark UIs bind to loopback and use SSH tunnels. Keep Spark RPC and UI ports private. Authentication and network encryption are configured under `/etc/6893-spark`; its shared secret must stay out of Git, screenshots, and command examples.
 
+## DuckDB storage
+
+DuckDB 2.0.0 is installed on **c0** as an embedded database. It uses a local file and does not need a database server or network port.
+
+**Project storage:** this is the persistent database on c0 for the project pipeline and dashboard. The repository’s `duckdb/` folder contains the scripts used on c0. Only `verify_duckdb.py` creates temporary test fixtures, which it removes after verification; it does not populate the project database.
+
+- Database: `~/6893/data/radar.duckdb`
+- Data folders: `~/6893/data/raw`, `processed`, and `published`
+- Isolated Python environment: `~/6893/.venv-duckdb`
+- Installed query helper: `~/6893/duckdb/query.py`
+
+After connecting to **c0**, run:
+
+```sh
+6893-duckdb
+6893-duckdb "SHOW TABLES;"
+6893-duckdb "SELECT current_setting('memory_limit'), current_setting('threads');"
+```
+
+The database uses the standard `main` schema and starts without project tables; source data has not been ingested. Query output is CSV and limited to 1,000 rows by default (`--limit` accepts up to 10,000). Queries open the database read-only unless you explicitly pass `--write` for ingestion. Use `--file` to read SQL from a file.
+
+The helper uses two threads, a 1 GB query memory limit, and a 5 GB temporary spill limit. These do not cap total process memory or the size of database files and exports. Temporary spill files go under `~/6893/data/tmp`.
+
+For direct embedded access, use one writer process or multiple read-only processes. Close other database connections before a separate process writes. A dashboard that stays open during ingestion should read published Parquet snapshots.
+
+The pinned ARM/Python 3.11 dependency and installer are in [duckdb/](duckdb/). To reproduce the setup, run this **on c0 from a clone of this repository**:
+
+```sh
+bash duckdb/setup.sh
+```
+
+The installer initializes missing storage without replacing existing data. Compression, collectors, and scheduled cleanup are separate pipeline work; installing DuckDB does not configure them.
+
 ## Data paths
+
+c0’s root partition and ext4 filesystem were expanded on November 1, 2026. The disk is 93 GiB (about 100 GB decimal), with an 89.0 GiB root filesystem and about 83.9 GiB free immediately after expansion. c1 and c2 retain their existing disks; their root partitions already fill the available space.
 
 The three VM disks are independent. Uploading a data file to c0 does not make it available to executors on c1 or c2. For jobs that use all three hosts, configure shared storage and its connector for distributed inputs and outputs. A local path such as `/tmp/output` can leave different Spark part files on different machines.
 

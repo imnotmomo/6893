@@ -1,2 +1,9 @@
 # SSH private key files, including files in subfolders
 *.key
+
+# Local database files, data, and Python runtime artifacts
+/data/
+/.venv-duckdb/
+*.duckdb
+*.duckdb.wal
+__pycache__/

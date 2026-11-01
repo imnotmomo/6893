@@ -1,0 +1,2 @@
+# DuckDB wheel pinned for c0: Linux aarch64, CPython 3.11.
+duckdb==2.0.0 --hash=sha256:bcdf10dfbc2c1a6bdc5b2a94bba5b15481e552c5745c2af1994617b0eb6bc750
