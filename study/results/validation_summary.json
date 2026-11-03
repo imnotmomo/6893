@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-03T01:37:39.528850+00:00",
+  "primary_snapshot": "20261103T012521Z-7fe27982",
+  "test_result": {
+    "initial_full_c0_suite_passed": 82,
+    "additional_git_sensitivity_tests_passed": 7,
+    "total_distinct_tests_passed": 89,
+    "skipped": 0
+  },
+  "ui": {
+    "checked_at": "2026-11-03T01:32:06.313290+00:00",
+    "pages": [
+      {
+        "page": "Radar",
+        "exceptions": 0,
+        "errors": 0
+      },
+      {
+        "page": "Tool details",
+        "exceptions": 0,
+        "errors": 0
+      },
+      {
+        "page": "Evaluation",
+        "exceptions": 0,
+        "errors": 0
+      },
+      {
+        "page": "Data evidence",
+        "exceptions": 0,
+        "errors": 0
+      }
+    ],
+    "supplementary_github_visible": true
+  },
+  "browser": {
+    "checked_at": "2026-11-03T01:32:49.056Z",
+    "url": "http://127.0.0.1:18501",
+    "pages": [
+      "dashboard_radar.png",
+      "dashboard_tool.png",
+      "dashboard_evaluation.png",
+      "dashboard_data.png"
+    ],
+    "page_errors": []
+  },
+  "independent_model_validation": "independent_model_validation.json",
+  "independent_git_validation": "independent_git_validation.json",
+  "scope": "Automated content, provenance, temporal/model and interface checks. Does not certify complete upstream GH capture, reviewed research relevance, or historical public availability of reconstructed Git commits."
+}

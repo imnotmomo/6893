@@ -1,0 +1,18 @@
+[Unit]
+Description=EECS6893 AI Technology Radar private dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/6893/dashboard
+Environment=RADAR_STUDY_DIR=/home/ubuntu/6893/data/study/latest
+Environment=OMP_NUM_THREADS=2
+ExecStart=/home/ubuntu/6893/.venv-duckdb/bin/python -m streamlit run /home/ubuntu/6893/dashboard/app.py --server.address=127.0.0.1 --server.port=8501 --browser.gatherUsageStats=false
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

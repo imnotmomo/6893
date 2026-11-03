@@ -1,0 +1,5 @@
+algorithm,split,baseline_model,augmented_model,baseline_mae,augmented_mae,mae_difference,n_predictions
+ridge,holdout_2026,ridge_dl_release_common,ridge_dl_release_git,0.14405334883355125,0.14447871638486579,0.00042536755131453163,990
+ridge,validation_2025,ridge_dl_release_common,ridge_dl_release_git,0.11015810728806577,0.11118413272764842,0.001026025439582648,1560
+histgb,holdout_2026,histgb_dl_release_common,histgb_dl_release_git,0.12072902054021634,0.12107139840574173,0.0003423778655253923,990
+histgb,validation_2025,histgb_dl_release_common,histgb_dl_release_git,0.09869744309067516,0.0988262741191838,0.00012883102850863581,1560

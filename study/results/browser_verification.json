@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-03T01:32:49.056Z",
+  "url": "http://127.0.0.1:18501",
+  "pages": [
+    "dashboard_radar.png",
+    "dashboard_tool.png",
+    "dashboard_evaluation.png",
+    "dashboard_data.png"
+  ],
+  "page_errors": []
+}

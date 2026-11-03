@@ -1,0 +1,243 @@
+{
+  "checked_at": "2026-11-02T22:00:38.202669+00:00",
+  "feature_checks": {
+    "passed": 11,
+    "runtime": "c0 Python3.11 DuckDB2 pandas3.1 PyArrow26"
+  },
+  "model_checks": {
+    "passed": 10,
+    "includes": [
+      "label availability",
+      "no future features",
+      "train-only preprocessing",
+      "pre-2026 model selection",
+      "full parquet pipeline"
+    ]
+  },
+  "budget_checks": {
+    "passed": 2,
+    "network": "mocked",
+    "db": "actual isolated DuckDB fixtures"
+  },
+  "dashboard_views": {
+    "tested": [
+      "Radar",
+      "Tool details",
+      "Evaluation",
+      "Data evidence"
+    ],
+    "exceptions": 0,
+    "data": "actual validated published snapshot",
+    "browser_page_errors": 0,
+    "generation_timing": "explicit Current projection label, actual generation time, and target-already-started notice"
+  },
+  "pip_check": "No broken requirements found.",
+  "spark_validation": {
+    "application_id": "app-20261102215443-0004",
+    "coverage_histogram": [
+      {
+        "count": 5990,
+        "daily_rows": 7,
+        "distinct_days": 7,
+        "dl_downloads_days": 7,
+        "gh_event_count_days": 7,
+        "release_count_days": 7
+      },
+      {
+        "count": 8,
+        "daily_rows": 7,
+        "distinct_days": 7,
+        "dl_downloads_days": 0,
+        "gh_event_count_days": 7,
+        "release_count_days": 0
+      },
+      {
+        "count": 2,
+        "daily_rows": 7,
+        "distinct_days": 7,
+        "dl_downloads_days": 4,
+        "gh_event_count_days": 7,
+        "release_count_days": 4
+      }
+    ],
+    "cpu_resources": {
+      "configured_executor_cores": "2",
+      "configured_total_executor_cores": "2",
+      "driver_host": "instance-20261101-1653",
+      "driver_jvm_available_processors": 2,
+      "driver_os_logical_cpus": 2,
+      "spark_default_parallelism": 4
+    },
+    "daily_rows": 42030,
+    "duplicate_daily_excess_rows": 0,
+    "duplicate_reference_keys": 0,
+    "excluded_out_of_reference_week_rows": 30,
+    "executor_hosts": [
+      "instance-20261101-1653"
+    ],
+    "executor_resources": {
+      "active_executor_cores": 2,
+      "available": true,
+      "executors": [
+        {
+          "completed_tasks": 174,
+          "cores": 2,
+          "executor_id": "0",
+          "host_port": "10.0.0.132:7080",
+          "total_shuffle_read_bytes": 3796151,
+          "total_shuffle_write_bytes": 3796151
+        }
+      ]
+    },
+    "finished_at": "2026-11-02T21:55:13.403945+00:00",
+    "input_partitions": 8,
+    "input_schema": "struct<tool_id:string,date:string,dl_downloads:double,gh_event_count:double,release_count:double>",
+    "inputs": {
+      "daily": {
+        "bytes": 416470,
+        "exists": true,
+        "path": "/home/ubuntu/6893/data/study/runs/20261102T215227Z-b9b371b3/daily_normalized.parquet",
+        "sha256": "8553ebce840e6c48ac2f51cd41717dba35769438c4b35a7931ed1e1c5dea67df"
+      },
+      "reference": {
+        "bytes": 233618,
+        "exists": true,
+        "path": "/home/ubuntu/6893/data/study/runs/20261102T215227Z-b9b371b3/weekly_reference.csv",
+        "sha256": "54ca2c3392a13064e26b768d9e17b5dda53f70fecdd2fa0a0d4d94eaa14d008e"
+      }
+    },
+    "invalid_daily_keys": 0,
+    "invalid_reference_keys": 0,
+    "master": "spark://10.0.0.132:7077",
+    "metric_checks": {
+      "dl_downloads": {
+        "null_coverage_mismatches": 0,
+        "reference_nonnull_weeks": 5990,
+        "reference_total": 17244076654.0,
+        "spark_nonnull_weeks": 5990,
+        "spark_total": 17244076654.0,
+        "value_or_null_mismatches": 0
+      },
+      "gh_event_count": {
+        "null_coverage_mismatches": 0,
+        "reference_nonnull_weeks": 6000,
+        "reference_total": 4982217.0,
+        "spark_nonnull_weeks": 6000,
+        "spark_total": 4982217.0,
+        "value_or_null_mismatches": 0
+      },
+      "release_count": {
+        "null_coverage_mismatches": 0,
+        "reference_nonnull_weeks": 5990,
+        "reference_total": 2607.0,
+        "spark_nonnull_weeks": 5990,
+        "spark_total": 2607.0,
+        "value_or_null_mismatches": 0
+      }
+    },
+    "metrics": [
+      "dl_downloads",
+      "gh_event_count",
+      "release_count"
+    ],
+    "mismatch_examples": [],
+    "mismatch_rows": 0,
+    "multi_host_benchmark": false,
+    "ok": true,
+    "partition_execution": [
+      {
+        "host": "instance-20261101-1653",
+        "partition": 0,
+        "rows": 5253,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 1,
+        "rows": 5253,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 2,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 3,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 4,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 5,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 6,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      },
+      {
+        "host": "instance-20261101-1653",
+        "partition": 7,
+        "rows": 5254,
+        "spark_local_ip": "127.0.0.1"
+      }
+    ],
+    "performance_claim": null,
+    "placement_policy": "c0-only wrapper; local input files are not a shared filesystem",
+    "reference_rows": 6000,
+    "reference_week_range": {
+      "first": "2023-01-02",
+      "last": "2026-10-26"
+    },
+    "requested_partitions": 8,
+    "runtime_seconds": 31.874394,
+    "scope": "Weekly correctness validation on the normalized study dataset",
+    "spark_version": "3.5.9",
+    "spark_weekly_rows": 6000,
+    "started_at": "2026-11-02T21:54:41.529572+00:00",
+    "status": "matched",
+    "timing_scope": "Entire validation, including scans, partition probes, shuffles and comparisons",
+    "weekly_aggregation_partitions": 8,
+    "weekly_aggregation_plan": "*(3) HashAggregate(keys=[tool_id#16, week_start#529], functions=[count(1), count(dl_downloads#18), sum(dl_downloads#18), count(gh_event_count#19), sum(gh_event_count#19), count(release_count#20), sum(release_count#20), count(distinct date#17)], output=[tool_id#16, week_start#529, daily_rows#515L, distinct_days#516L, dl_downloads_days#518L, dl_downloads_sum#520, gh_event_count_days#522L, gh_event_count_sum#524, release_count_days#526L, release_count_sum#528])\n+- Exchange hashpartitioning(tool_id#16, week_start#529, 8), ENSURE_REQUIREMENTS, [plan_id=556]\n   +- *(2) HashAggregate(keys=[tool_id#16, week_start#529], functions=[merge_count(1), merge_count(dl_downloads#18), merge_sum(dl_downloads#18), merge_count(gh_event_count#19), merge_sum(gh_event_count#19), merge_count(release_count#20), merge_sum(release_count#20), partial_count(distinct date#17)], output=[tool_id#16, week_start#529, count#804L, count#806L, sum#808, count#810L, sum#812, count#814L, sum#816, count#819L])\n      +- *(2) HashAggregate(keys=[tool_id#16, week_start#529, date#17], functions=[merge_count(1), merge_count(dl_downloads#18), merge_sum(dl_downloads#18), merge_count(gh_event_count#19), merge_sum(gh_event_count#19), merge_count(release_count#20), merge_sum(release_count#20)], output=[tool_id#16, week_start#529, date#17, count#804L, count#806L, sum#808, count#810L, sum#812, count#814L, sum#816])\n         +- Exchange hashpartitioning(tool_id#16, week_start#529, date#17, 8), ENSURE_REQUIREMENTS, [plan_id=551]\n            +- *(1) HashAggregate(keys=[tool_id#16, week_start#529, date#17], functions=[partial_count(1), partial_count(dl_downloads#18), partial_sum(dl_downloads#18), partial_count(gh_event_count#19), partial_sum(gh_event_count#19), partial_count(release_count#20), partial_sum(release_count#20)], output=[tool_id#16, week_start#529, date#17, count#804L, count#806L, sum#808, count#810L, sum#812, count#814L, sum#816])\n               +- *(1) Project [tool_id#16, date#17, dl_downloads#18, gh_event_count#19, release_count#20, cast(date_trunc(week, cast(date#17 as timestamp), Some(UTC)) as date) AS week_start#529]\n                  +- InMemoryTableScan [date#17, dl_downloads#18, gh_event_count#19, release_count#20, tool_id#16]\n                        +- InMemoryRelation [tool_id#16, date#17, dl_downloads#18, gh_event_count#19, release_count#20], StorageLevel(disk, memory, 1 replicas)\n                              +- Exchange RoundRobinPartitioning(8), REPARTITION_BY_NUM, [plan_id=16]\n                                 +- *(1) Project [tool_id#0, CASE WHEN RLIKE(date#1, ^\\d{4}-\\d{2}-\\d{2}$) THEN cast(gettimestamp(date#1, yyyy-MM-dd, TimestampType, Some(UTC), false) as date) END AS date#17, CASE WHEN ((isnotnull(dl_downloads#2) AND NOT isnan(dl_downloads#2)) AND NOT (abs(dl_downloads#2) = Infinity)) THEN dl_downloads#2 END AS dl_downloads#18, CASE WHEN ((isnotnull(gh_event_count#3) AND NOT isnan(gh_event_count#3)) AND NOT (abs(gh_event_count#3) = Infinity)) THEN gh_event_count#3 END AS gh_event_count#19, CASE WHEN ((isnotnull(release_count#4) AND NOT isnan(release_count#4)) AND NOT (abs(release_count#4) = Infinity)) THEN release_count#4 END AS release_count#20]\n                                    +- *(1) ColumnarToRow\n                                       +- FileScan parquet [tool_id#0,date#1,dl_downloads#2,gh_event_count#3,release_count#4] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[file:/home/ubuntu/6893/data/study/runs/20261102T215227Z-b9b371b3/daily..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<tool_id:string,date:string,dl_downloads:double,gh_event_count:double,release_count:double>\n",
+    "weekly_rule": "Monday UTC; exactly seven rows, seven distinct days and seven finite nonnull values per metric; otherwise NULL"
+  },
+  "rate_limit_checks": {
+    "passed": 4,
+    "network": "mocked; actual dispatch and isolated DuckDB fixtures"
+  },
+  "research_backfill": "complete through 2026-11-01; 6909 tool-paper candidate pairs; relevance/version review remains pending; excluded from forecasting",
+  "auditor_checks": {
+    "passed": 6,
+    "network": "mocked",
+    "purpose": "strict cap/type/date/ID checks with Google empty-array normalization"
+  },
+  "retained_source_audit": {
+    "ok": true,
+    "complete_history_groups": 62,
+    "expected_history_groups": 62,
+    "raw_objects_verified": 1488,
+    "raw_objects_checked": 1488,
+    "unfinished_jobs": 0,
+    "errors": []
+  },
+  "snapshot_id": "20261102T215227Z-b9b371b3",
+  "planner_checks": {
+    "passed": 4,
+    "scope": "frozen yearly bootstrap, future incremental windows, outage catch-up, unchanged budget"
+  },
+  "total_unit_tests_passed": 37,
+  "core_features_identical_after_research_completion": true,
+  "metrics_and_selection_identical_after_research_completion": true
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "status": "complete",
+  "generated_at": "2026-11-03T01:27:40.099676+00:00",
+  "profile": "validated_primary",
+  "analysis_type": "post_audit_corrective_sensitivity",
+  "previously_examined_2026": true,
+  "analysis_note": "Post-audit corrective sensitivity rerun after inspecting the original 2026 results. The original GitHub-containing results are superseded as primary evidence. Model selection still uses only 2025-origin labels available by 2026-01-01 UTC; hyperparameters are frozen and no 2026 tuning is performed. The 2026 period is not an untouched confirmatory test.",
+  "supersedes_snapshot": "20261102T215227Z-b9b371b3",
+  "excluded_feature_groups": [
+    "gh",
+    "research"
+  ],
+  "source_quality_policy": "capture_quality_v1",
+  "quality_gate": {
+    "validation_status": "passed",
+    "quality_report_sha256": "6f58bd92865fab272b547e889951fafbd3a32651e8df132c8c10083c90d9009e",
+    "source_policy_sha256": "0a6ca56c2ce30e4b968f0608e94fd478b2390ec3f16ce12d66421b4a2a986848",
+    "weekly_features_sha256": "4256528212eae88c3e467045fe98aa1e0ccd0619fc54fe82fcb8152865f132ef",
+    "cohort_sha256": "f89567ca699597ce9cddc6ac52efa718c4a2310cf06078724f1e5655d6caaf4c"
+  },
+  "model_ids": [
+    "persistence",
+    "training_median",
+    "trend8",
+    "ridge_dl",
+    "ridge_dl_release",
+    "histgb_dl",
+    "histgb_dl_release"
+  ],
+  "prediction_rows": 17850,
+  "future_prediction_rows": 210,
+  "best_model": "histgb_dl_release",
+  "as_of": "2026-11-03T01:25:21.455306+00:00",
+  "files": {
+    "block_bootstrap_vs_persistence.csv": "78b02714d0de5fb5a50f6511b968e541e0fde5e2f54a71dd19781a4e959c42f3",
+    "block_bootstrap_vs_persistence.json": "fd7722a74cc3a335c73466c22a8ded6f62b040cb7922b492313105b13e00eb57",
+    "data_quality.json": "6f58bd92865fab272b547e889951fafbd3a32651e8df132c8c10083c90d9009e",
+    "feature_groups.json": "0154da11b58877f38d53634989f4b580c6eea3e086a6c349f67c46f34d80eba9",
+    "final_models/histgb_dl.joblib": "b46308c382ede115210ffe2091ec2b6ab996d21beef43a8c507a1566857ccb8a",
+    "final_models/histgb_dl_release.joblib": "a68e0ac9dbe83bb9f623b259216b25bc98db0c64d5da09de62b4f6df5740b6fd",
+    "final_models/ridge_dl.joblib": "fd394d33fb9719cc193f3fa42029fa627f8d7633ac06dd73491002df18db8998",
+    "final_models/ridge_dl_release.joblib": "8a4b2393c531e249164e74bd503398a3e6276858dc6c8d834af2a848e1741bc0",
+    "final_models.json": "58ee14450d61527e16b1817457eb4f63fe9e7837b9b004cd741ca1abe4407c9e",
+    "folds.json": "24741184100fa0c57d8d4f82d2278c7f1f820627a0f81ed138c28a68a4e8ee4b",
+    "future_predictions.parquet": "a6c5838bacdbf67947a07e310760e06cec602ead3a2f4b3d6ba87d00ac7d8b7f",
+    "latest_forecasts.parquet": "a6c5838bacdbf67947a07e310760e06cec602ead3a2f4b3d6ba87d00ac7d8b7f",
+    "measurement_boundary_metrics.csv": "ebb5ec42b46a7fd3e9d9eab2a2a446e5f4e37d26d5926976e85f9e12e78c78d8",
+    "measurement_boundary_metrics.json": "501adfdcecc16dee655a413eab4836a73dee7bd416b2c0e761ab0115603ae0bc",
+    "metrics.csv": "7ab60e81450ccaf75c95e40fa9a88f4b31805ad1ab80047fee967a2ca8c98c40",
+    "metrics.json": "70280b2cbc3c1915963fdbb6b4f682ee0dc657b807a0afc3f196b8db23f6063e",
+    "model_config.json": "8fa8d84a215655f5d8df1647c480321d99160fe158f74d2e6bb44e2f67d91b78",
+    "per_tool_errors.csv": "64ae64e5563bf5524ffca47adbcaa914f76f67aac1950bff9c4172ce67a87bf1",
+    "per_week_metrics.csv": "fe78326acc5de115a5666cdaf42ff6add3da29ec69f1301bd52c471cbd998b0e",
+    "predictions.parquet": "b614608b52b00c2d16fd958f6f27091b467e41215f807bc061284b76ef1e9927",
+    "source_ablation_metrics.csv": "99971f43556d3b3cd01ffa3d583c1f6da6b6f7736cb5e9acbb9093c68175eae0",
+    "source_ablation_metrics.json": "44b33dfc496878b83ae4fa6dbede9371277d867fbeac946c01430dd2ece84d4b",
+    "source_ablation_per_tool.csv": "57b83c418806322ff349580e88eee13212bb419367df141978d0742ef6c14967",
+    "source_quality.json": "0a6ca56c2ce30e4b968f0608e94fd478b2390ec3f16ce12d66421b4a2a986848"
+  }
+}

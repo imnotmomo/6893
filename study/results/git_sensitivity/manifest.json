@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "profile": "retrospective_git_sensitivity",
+  "analysis_type": "posthoc_retrospective_git_sensitivity",
+  "primary_eligible": false,
+  "historical_public_availability": "unknown",
+  "previously_examined_2026": true,
+  "note": "Posthoc sensitivity analysis of previously examined 2026 outcomes. Current surviving default-branch history and committer dates do not certify historical public availability, recover deleted/rewritten history, or restore GitHub PushEvents. No primary model selection or promotion is performed.",
+  "files": {
+    "ablations.csv": "00276b13d5507ec25cef1673612b2d4f4aabd22dc2535537b9c67bda0885f66f",
+    "ablations.json": "e7f61447c01a4e4887cd523d78bf94871841a15bef1d2778a9e8eaf9cec65af9",
+    "block_ci_vs_published_persistence.json": "debb584c05d7cccb768cf248040e99111b1cd479bee3ff3a91d1d09e2707e80c",
+    "block_ci_vs_published_training_median.json": "a345e636f13728532f6570f45bec9ae2137a05f7f37722ce9a137aa448efe838",
+    "folds.json": "6abac44d23bbbb1575a88dc6c31af576b93cb06b45b8ca3dcae44bf7fef1261b",
+    "frozen_2025_metrics.json": "b541f69b0578508d90bba91df16aa44cfe7de6b4a7fc83cf783629b23282bb92",
+    "git_features.parquet": "55a27371b73040602ad53430835603ceed74c0417561a25fd1f256845d37520d",
+    "metrics.csv": "ddd49b975df397de809f8a1cb07384877a264e81e8de4c4fbb07df999b4b5b1a",
+    "metrics.json": "f206853421a28f6046d6142afd022ba73e906a3da12a6a959e3b71c3d607c812",
+    "per_tool_errors.csv": "21790ea926d6ced76bf4371e060f973d0d570558f0a781912525979d637a93e8",
+    "per_week_metrics.csv": "76cb42b78477b811baf2483f30e68da4cca95530320a00b35ba3e7bbc4a47d60",
+    "predictions.csv": "aed0381cf068ecbf73a8ec598979c5bf5e4e7ea449ea8bba69761a01ddc9fbbd",
+    "predictions.parquet": "5ae46cccf434ebce7fb71c6a11e41acc90e3c509aace83bd24c951bc3ee41d75",
+    "provenance_quality.json": "8ab191b087df86924c62dfb8f6b45e874f1a28467273cf881211ab6cb653661a"
+  }
+}

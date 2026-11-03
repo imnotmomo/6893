@@ -1,0 +1,106 @@
+{
+  "profile": "retrospective_git_sensitivity",
+  "note": "Posthoc sensitivity analysis of previously examined 2026 outcomes. Current surviving default-branch history and committer dates do not certify historical public availability, recover deleted/rewritten history, or restore GitHub PushEvents. No primary model selection or promotion is performed.",
+  "results": [
+    {
+      "algorithm": "ridge",
+      "split": "holdout_2026",
+      "baseline_model": "ridge_dl_release_common",
+      "augmented_model": "ridge_dl_release_git",
+      "baseline_mae": 0.14405334883355125,
+      "augmented_mae": 0.14447871638486579,
+      "mae_difference": 0.00042536755131453163,
+      "n_predictions": 990,
+      "paired_block_interval": {
+        "split": "holdout_2026",
+        "model": "ridge_dl_release_git",
+        "reference": "ridge_dl_release_common",
+        "statistic": "unweighted mean of paired weekly MAE differences, model minus reference",
+        "mean_weekly_mae_difference": 0.00042536755131454047,
+        "n_weeks": 33,
+        "block_weeks": 8,
+        "draws": 1000,
+        "valid_moving_blocks": 26,
+        "ci_level": 0.95,
+        "ci_low": -0.00024578066552678724,
+        "ci_high": 0.0008501152416201837,
+        "status": "computed"
+      }
+    },
+    {
+      "algorithm": "ridge",
+      "split": "validation_2025",
+      "baseline_model": "ridge_dl_release_common",
+      "augmented_model": "ridge_dl_release_git",
+      "baseline_mae": 0.11015810728806577,
+      "augmented_mae": 0.11118413272764842,
+      "mae_difference": 0.001026025439582648,
+      "n_predictions": 1560,
+      "paired_block_interval": {
+        "split": "validation_2025",
+        "model": "ridge_dl_release_git",
+        "reference": "ridge_dl_release_common",
+        "statistic": "unweighted mean of paired weekly MAE differences, model minus reference",
+        "mean_weekly_mae_difference": 0.0010260254395826536,
+        "n_weeks": 52,
+        "block_weeks": 8,
+        "draws": 1000,
+        "valid_moving_blocks": 45,
+        "ci_level": 0.95,
+        "ci_low": 0.00037229118855913837,
+        "ci_high": 0.002090841996221442,
+        "status": "computed"
+      }
+    },
+    {
+      "algorithm": "histgb",
+      "split": "holdout_2026",
+      "baseline_model": "histgb_dl_release_common",
+      "augmented_model": "histgb_dl_release_git",
+      "baseline_mae": 0.12072902054021634,
+      "augmented_mae": 0.12107139840574173,
+      "mae_difference": 0.0003423778655253923,
+      "n_predictions": 990,
+      "paired_block_interval": {
+        "split": "holdout_2026",
+        "model": "histgb_dl_release_git",
+        "reference": "histgb_dl_release_common",
+        "statistic": "unweighted mean of paired weekly MAE differences, model minus reference",
+        "mean_weekly_mae_difference": 0.00034237786552536497,
+        "n_weeks": 33,
+        "block_weeks": 8,
+        "draws": 1000,
+        "valid_moving_blocks": 26,
+        "ci_level": 0.95,
+        "ci_low": -0.0003084251906048686,
+        "ci_high": 0.0009212851009139192,
+        "status": "computed"
+      }
+    },
+    {
+      "algorithm": "histgb",
+      "split": "validation_2025",
+      "baseline_model": "histgb_dl_release_common",
+      "augmented_model": "histgb_dl_release_git",
+      "baseline_mae": 0.09869744309067516,
+      "augmented_mae": 0.0988262741191838,
+      "mae_difference": 0.00012883102850863581,
+      "n_predictions": 1560,
+      "paired_block_interval": {
+        "split": "validation_2025",
+        "model": "histgb_dl_release_git",
+        "reference": "histgb_dl_release_common",
+        "statistic": "unweighted mean of paired weekly MAE differences, model minus reference",
+        "mean_weekly_mae_difference": 0.00012883102850862622,
+        "n_weeks": 52,
+        "block_weeks": 8,
+        "draws": 1000,
+        "valid_moving_blocks": 45,
+        "ci_level": 0.95,
+        "ci_low": -0.00040959029811376576,
+        "ci_high": 0.0014366256505216864,
+        "status": "computed"
+      }
+    }
+  ]
+}

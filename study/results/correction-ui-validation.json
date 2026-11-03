@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-03T01:32:06.313290+00:00",
+  "pages": [
+    {
+      "page": "Radar",
+      "exceptions": 0,
+      "errors": 0
+    },
+    {
+      "page": "Tool details",
+      "exceptions": 0,
+      "errors": 0
+    },
+    {
+      "page": "Evaluation",
+      "exceptions": 0,
+      "errors": 0
+    },
+    {
+      "page": "Data evidence",
+      "exceptions": 0,
+      "errors": 0
+    }
+  ],
+  "supplementary_github_visible": true
+}

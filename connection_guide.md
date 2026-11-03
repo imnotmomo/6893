@@ -162,7 +162,7 @@ After connecting to **c0**, run:
 6893-duckdb "SELECT current_setting('memory_limit'), current_setting('threads');"
 ```
 
-The database uses the standard `main` schema and starts without project tables; source data has not been ingested. Query output is CSV and limited to 1,000 rows by default (`--limit` accepts up to 10,000). Queries open the database read-only unless you explicitly pass `--write` for ingestion. Use `--file` to read SQL from a file.
+The query helper defaults to the standard `main` schema. The metadata pilot is stored in the `pilot` schema, and historical records/checkpoints are in `backfill`; see the [pilot guide](data_collection.md) and [backfill guide](backfill_guide.md). Query output is CSV and limited to 1,000 rows by default (`--limit` accepts up to 10,000). Queries open the database read-only unless you explicitly pass `--write` for ingestion. Use `--file` to read SQL from a file.
 
 The helper uses two threads, a 1 GB query memory limit, and a 5 GB temporary spill limit. These do not cap total process memory or the size of database files and exports. Temporary spill files go under `~/6893/data/tmp`.
 
@@ -174,7 +174,7 @@ The pinned ARM/Python 3.11 dependency and installer are in [duckdb/](duckdb/). T
 bash duckdb/setup.sh
 ```
 
-The installer initializes missing storage without replacing existing data. Compression, collectors, and scheduled cleanup are separate pipeline work; installing DuckDB does not configure them.
+The installer initializes missing storage without replacing existing data. The pilot collector retains gzip source responses and exports Zstd Parquet. Historical backfill and daily replay work now run under the 15-minute cron dispatcher; logs have compressed rotation. Weekly feature construction and model training remain separate planned work.
 
 ## Data paths
 
@@ -183,3 +183,13 @@ c0’s root partition and ext4 filesystem were expanded on November 1, 2026. The
 The three VM disks are independent. Uploading a data file to c0 does not make it available to executors on c1 or c2. For jobs that use all three hosts, configure shared storage and its connector for distributed inputs and outputs. A local path such as `/tmp/output` can leave different Spark part files on different machines.
 
 The smoke test generates data on executors and saves its small collected report on c0. Keep project extracts compact and leave disk space for Spark shuffle, spill, and logs.
+
+## AI Technology Radar dashboard
+
+Once a study snapshot is published, forward the private dashboard port:
+
+```sh
+ssh -i ~/.ssh/6893.key -N -L 8501:127.0.0.1:8501 ubuntu@129.159.41.246
+```
+
+Open [localhost:8501](http://localhost:8501) while SSH is running. This reads the latest published snapshot on c0. See the [study guide](study_guide.md) for evaluation and reproduction details.

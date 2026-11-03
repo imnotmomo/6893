@@ -1,0 +1,27 @@
+{
+  "dl": [
+    "dl_downloads",
+    "dl_lag_0",
+    "dl_lag_1",
+    "dl_lag_2",
+    "dl_lag_3",
+    "dl_lag_4",
+    "dl_lag_5",
+    "dl_lag_6",
+    "dl_lag_7",
+    "dl_log_change_1w",
+    "dl_log_change_4w",
+    "dl_log_change_8w",
+    "dl_log_downloads",
+    "dl_log_median_4w"
+  ],
+  "gh": [],
+  "release": [
+    "release_count",
+    "release_count_4w"
+  ],
+  "research": [],
+  "controls": [
+    "tool_age_weeks"
+  ]
+}

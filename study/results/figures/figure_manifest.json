@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-11-03T01:27:57.564037+00:00",
+  "results_dir": "/home/ubuntu/6893/data/study/runs/20261103T012521Z-7fe27982",
+  "selection_source": "metrics.json selection",
+  "selected_model": "histgb_dl_release",
+  "profile": "validated_primary",
+  "analysis_type": "post_audit_corrective_sensitivity",
+  "previously_examined_2026": true,
+  "excluded_feature_groups": [
+    "gh",
+    "research"
+  ],
+  "selection_label_availability_cutoff": "2026-01-01T00:00:00+00:00",
+  "holdout_models": [
+    "histgb_dl",
+    "histgb_dl_release",
+    "persistence",
+    "ridge_dl",
+    "ridge_dl_release",
+    "training_median",
+    "trend8"
+  ],
+  "common_holdout_tool_weeks": 990,
+  "examples_rule": "three largest per-tool MAEs for the frozen selected model; tool_id ascending breaks ties",
+  "example_tools": [
+    {
+      "tool_id": "langchain",
+      "mae": 0.3703562139817002
+    },
+    {
+      "tool_id": "onnxruntime",
+      "mae": 0.24599622854953074
+    },
+    {
+      "tool_id": "datasets",
+      "mae": 0.23283871299192466
+    }
+  ],
+  "spearman_note": "Undefined Spearman values remain unavailable in saved metrics; no zero replacement or confidence score is plotted.",
+  "inputs": {
+    "metrics.json": "70280b2cbc3c1915963fdbb6b4f682ee0dc657b807a0afc3f196b8db23f6063e",
+    "predictions.parquet": "b614608b52b00c2d16fd958f6f27091b467e41215f807bc061284b76ef1e9927",
+    "weekly_features.parquet": "4256528212eae88c3e467045fe98aa1e0ccd0619fc54fe82fcb8152865f132ef",
+    "data_quality.json": "6f58bd92865fab272b547e889951fafbd3a32651e8df132c8c10083c90d9009e",
+    "source_quality.json": "0a6ca56c2ce30e4b968f0608e94fd478b2390ec3f16ce12d66421b4a2a986848"
+  },
+  "outputs": {
+    "figures/model_holdout_mae.png": "c90e80741508f7b14502e4e6200543b91ef5a4e28ab787dea00827324b07272a",
+    "figures/source_ablation.png": "3dc3c3fda8067ac3499536168224ce1f7195d8eb1e9ff77c4bdc5e79b981c768",
+    "figures/weekly_error.png": "081a79e8e8988db36ea836e4a789a09750a319e09db5b842e4803722aaa7d25d",
+    "figures/example_forecasts.png": "cb1c98f71782afb9ca0b8c552df1e6f68eb60b99f469dc28151bcb26360eda4d",
+    "figures/panel_availability.png": "33b22f7fdb10d4e37d74b7fd7af45288a58c6cfcb15fc79caa92235ccc4d65da",
+    "figures/block_intervals.png": "387ad60ca89ab074a89b36f461781db0ce6a259d8b18676bc49aa49e1948342b",
+    "weekly_features.csv": "ad12f607b8a4cda114bca31b7fe50b294c4e1d6c8a219bba22a86be91346ed54",
+    "predictions.csv": "2ffe4ddebd696632e13e5ab7b1cc152274d53c64456f1917cf38b01bf0e161d6"
+  }
+}

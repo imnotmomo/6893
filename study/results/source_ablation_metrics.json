@@ -1,0 +1,116 @@
+{
+  "profile": "validated_primary",
+  "analysis_type": "post_audit_corrective_sensitivity",
+  "comparison": "Within-estimator downloads versus downloads plus release signals; identical evaluation rows and fixed hyperparameters",
+  "interpretation": "negative MAE differences favor adding releases; this is descriptive post-audit sensitivity analysis",
+  "excluded_feature_groups": [
+    "gh",
+    "research"
+  ],
+  "results": [
+    {
+      "split": "holdout_2026",
+      "algorithm": "ridge",
+      "baseline_model": "ridge_dl",
+      "augmented_model": "ridge_dl_release",
+      "baseline_sources": [
+        "dl",
+        "controls"
+      ],
+      "augmented_sources": [
+        "dl",
+        "release",
+        "controls"
+      ],
+      "baseline_mae": 0.14451730070741545,
+      "augmented_mae": 0.14405334883355125,
+      "mae_difference": -0.00046395187386419345,
+      "relative_mae_change": -0.0032103552418508707,
+      "n_predictions": 990,
+      "n_weeks": 33,
+      "mean_weekly_mae_difference": -0.000463951873864188,
+      "ci_low": -0.0008794247680742297,
+      "ci_high": -0.0002742514771073161,
+      "ci_status": "computed",
+      "block_weeks": 8
+    },
+    {
+      "split": "validation_2025",
+      "algorithm": "ridge",
+      "baseline_model": "ridge_dl",
+      "augmented_model": "ridge_dl_release",
+      "baseline_sources": [
+        "dl",
+        "controls"
+      ],
+      "augmented_sources": [
+        "dl",
+        "release",
+        "controls"
+      ],
+      "baseline_mae": 0.11025543345328521,
+      "augmented_mae": 0.11015810728806577,
+      "mae_difference": -9.732616521944404e-05,
+      "relative_mae_change": -0.0008827335050175522,
+      "n_predictions": 1560,
+      "n_weeks": 52,
+      "mean_weekly_mae_difference": -9.732616521943657e-05,
+      "ci_low": -0.00045559409699737956,
+      "ci_high": 0.00012093575166069116,
+      "ci_status": "computed",
+      "block_weeks": 8
+    },
+    {
+      "split": "holdout_2026",
+      "algorithm": "histgb",
+      "baseline_model": "histgb_dl",
+      "augmented_model": "histgb_dl_release",
+      "baseline_sources": [
+        "dl",
+        "controls"
+      ],
+      "augmented_sources": [
+        "dl",
+        "release",
+        "controls"
+      ],
+      "baseline_mae": 0.12001850897074035,
+      "augmented_mae": 0.12072902054021634,
+      "mae_difference": 0.0007105115694759911,
+      "relative_mae_change": 0.005920016633844449,
+      "n_predictions": 990,
+      "n_weeks": 33,
+      "mean_weekly_mae_difference": 0.0007105115694760374,
+      "ci_low": 0.000435997608719696,
+      "ci_high": 0.0013887697218218158,
+      "ci_status": "computed",
+      "block_weeks": 8
+    },
+    {
+      "split": "validation_2025",
+      "algorithm": "histgb",
+      "baseline_model": "histgb_dl",
+      "augmented_model": "histgb_dl_release",
+      "baseline_sources": [
+        "dl",
+        "controls"
+      ],
+      "augmented_sources": [
+        "dl",
+        "release",
+        "controls"
+      ],
+      "baseline_mae": 0.09861232337469152,
+      "augmented_mae": 0.09869744309067516,
+      "mae_difference": 8.511971598364199e-05,
+      "relative_mae_change": 0.0008631752408896354,
+      "n_predictions": 1560,
+      "n_weeks": 52,
+      "mean_weekly_mae_difference": 8.511971598366707e-05,
+      "ci_low": -0.0008673028885583724,
+      "ci_high": 0.0008099589934075685,
+      "ci_status": "computed",
+      "block_weeks": 8
+    }
+  ]
+}

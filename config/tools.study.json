@@ -1,0 +1,716 @@
+{
+  "tools": [
+    {
+      "tool_id": "pytorch",
+      "name": "PyTorch",
+      "pypi_package": "torch",
+      "github_repo": "pytorch/pytorch",
+      "arxiv_query": "(ti:PyTorch OR abs:PyTorch)",
+      "notes": "The project name is PyTorch but the PyPI distribution is torch. Counts target this PyPI package, not all framework installations or users.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/torch/json",
+        "https://api.github.com/repos/pytorch/pytorch"
+      ],
+      "github_repo_id": 65600975,
+      "category": "deep_learning_frameworks",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "PyTorch"
+      ]
+    },
+    {
+      "tool_id": "tensorflow",
+      "name": "TensorFlow",
+      "pypi_package": "tensorflow",
+      "github_repo": "tensorflow/tensorflow",
+      "arxiv_query": "(ti:TensorFlow OR abs:TensorFlow)",
+      "notes": "Keep tensorflow downloads separate from related platform distributions and ecosystem packages. Packaging changes may affect the target independently of usage.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/tensorflow/json",
+        "https://api.github.com/repos/tensorflow/tensorflow"
+      ],
+      "github_repo_id": 45717250,
+      "category": "deep_learning_frameworks",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "TensorFlow"
+      ]
+    },
+    {
+      "tool_id": "transformers",
+      "name": "Hugging Face Transformers",
+      "pypi_package": "transformers",
+      "github_repo": "huggingface/transformers",
+      "arxiv_query": "((ti:transformers OR abs:transformers) AND (ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:\"HuggingFace\" OR abs:\"HuggingFace\" OR ti:\"transformers library\" OR abs:\"transformers library\" OR ti:\"huggingface/transformers\" OR abs:\"huggingface/transformers\"))",
+      "notes": "Do not use bare transformers as a paper match: it usually names an architecture rather than this library. The contextual query remains a candidate and can still yield false positives or miss library mentions.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/transformers/json",
+        "https://api.github.com/repos/huggingface/transformers"
+      ],
+      "github_repo_id": 155220641,
+      "category": "llm_and_generative_tooling",
+      "research_ambiguous": true,
+      "research_exact_aliases": [
+        "Hugging Face Transformers",
+        "HuggingFace Transformers",
+        "transformers library",
+        "huggingface/transformers"
+      ]
+    },
+    {
+      "tool_id": "scikit-learn",
+      "name": "scikit-learn",
+      "pypi_package": "scikit-learn",
+      "github_repo": "scikit-learn/scikit-learn",
+      "arxiv_query": "(ti:\"scikit-learn\" OR abs:\"scikit-learn\" OR ti:sklearn OR abs:sklearn)",
+      "notes": "Use scikit-learn as the package target. sklearn is only a candidate research/import alias in this mapping, not a second download series.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/scikit-learn/json",
+        "https://api.github.com/repos/scikit-learn/scikit-learn"
+      ],
+      "github_repo_id": 843222,
+      "category": "classical_ml_and_explainability",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "scikit-learn",
+        "scikit learn",
+        "sklearn"
+      ]
+    },
+    {
+      "tool_id": "xgboost",
+      "name": "XGBoost",
+      "pypi_package": "xgboost",
+      "github_repo": "dmlc/xgboost",
+      "arxiv_query": "(ti:XGBoost OR abs:XGBoost)",
+      "notes": "Research mentions may refer to the boosting method or non-Python implementations; they are attention signals, not proof of PyPI usage.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/xgboost/json",
+        "https://api.github.com/repos/dmlc/xgboost"
+      ],
+      "github_repo_id": 16587283,
+      "category": "classical_ml_and_explainability",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "XGBoost"
+      ]
+    },
+    {
+      "tool_id": "lightgbm",
+      "name": "LightGBM",
+      "pypi_package": "lightgbm",
+      "github_repo": "lightgbm-org/LightGBM",
+      "arxiv_query": "(ti:LightGBM OR abs:LightGBM)",
+      "notes": "Current PyPI metadata points to lightgbm-org/LightGBM. The legacy microsoft/LightGBM API URL redirects to the same repository ID, 64991887. Historical event collection must account for repository renames. Paper mentions can describe the method rather than Python-package use.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/lightgbm/json",
+        "https://api.github.com/repos/lightgbm-org/LightGBM",
+        "https://api.github.com/repos/microsoft/LightGBM"
+      ],
+      "github_repo_id": 64991887,
+      "category": "classical_ml_and_explainability",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "LightGBM"
+      ],
+      "github_repo_aliases": [
+        "microsoft/LightGBM"
+      ]
+    },
+    {
+      "tool_id": "langchain",
+      "name": "LangChain",
+      "pypi_package": "langchain",
+      "github_repo": "langchain-ai/langchain",
+      "arxiv_query": "(ti:LangChain OR abs:LangChain)",
+      "notes": "Repository activity covers a monorepo, while this target counts only langchain, not langchain-core or other integration packages. Keep the package definition fixed rather than silently summing ecosystem packages.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/langchain/json",
+        "https://api.github.com/repos/langchain-ai/langchain"
+      ],
+      "github_repo_id": 552661142,
+      "category": "llm_and_generative_tooling",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "LangChain"
+      ]
+    },
+    {
+      "tool_id": "llama-index",
+      "name": "LlamaIndex",
+      "pypi_package": "llama-index",
+      "github_repo": "run-llama/llama_index",
+      "arxiv_query": "(ti:LlamaIndex OR abs:LlamaIndex OR ti:\"Llama Index\" OR abs:\"Llama Index\")",
+      "notes": "llama-index is an umbrella distribution; do not equate its downloads with every component such as llama-index-core. The legacy jerryjliu/gpt_index repository URL resolves to the same repository ID, 560704231. Earlier GPT Index names/package history need a separate date-aligned review before backfilling 2023; those aliases are not included automatically.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/llama-index/json",
+        "https://api.github.com/repos/run-llama/llama_index",
+        "https://api.github.com/repos/jerryjliu/gpt_index"
+      ],
+      "github_repo_id": 560704231,
+      "category": "llm_and_generative_tooling",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "LlamaIndex",
+        "Llama Index"
+      ],
+      "github_repo_aliases": [
+        "jerryjliu/gpt_index"
+      ]
+    },
+    {
+      "tool_id": "mlflow",
+      "name": "MLflow",
+      "pypi_package": "mlflow",
+      "github_repo": "mlflow/mlflow",
+      "arxiv_query": "(ti:MLflow OR abs:MLflow)",
+      "notes": "Use the mlflow distribution only for the study target; repository-wide activity and related distributions such as mlflow-skinny are not identical units of adoption.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/mlflow/json",
+        "https://api.github.com/repos/mlflow/mlflow"
+      ],
+      "github_repo_id": 136202695,
+      "category": "mlops_and_optimization",
+      "research_ambiguous": false,
+      "research_exact_aliases": [
+        "MLflow"
+      ]
+    },
+    {
+      "tool_id": "ray",
+      "name": "Ray",
+      "pypi_package": "ray",
+      "github_repo": "ray-project/ray",
+      "arxiv_query": "(ti:\"Ray Tune\" OR abs:\"Ray Tune\" OR ti:RLlib OR abs:RLlib OR ti:\"Ray framework\" OR abs:\"Ray framework\" OR ti:\"ray-project\" OR abs:\"ray-project\")",
+      "notes": "Never use bare ray as the research query because of unrelated scientific meanings. This narrower candidate covers selected Ray ecosystem terms, may miss core Ray papers, and requires manual relevance checks.",
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/ray/json",
+        "https://api.github.com/repos/ray-project/ray"
+      ],
+      "github_repo_id": 71932349,
+      "category": "mlops_and_optimization",
+      "research_ambiguous": true,
+      "research_exact_aliases": [
+        "Ray Tune",
+        "RLlib",
+        "Ray framework",
+        "ray-project/ray"
+      ]
+    },
+    {
+      "tool_id": "jax",
+      "name": "JAX",
+      "pypi_package": "jax",
+      "github_repo": "jax-ml/jax",
+      "github_repo_id": 154739597,
+      "arxiv_query": "((ti:JAX OR abs:JAX) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"JAX library\" OR abs:\"JAX library\" OR ti:\"JAX framework\" OR abs:\"JAX framework\" OR ti:\"jax-ml\" OR abs:\"jax-ml\"))",
+      "notes": "The JAX acronym is ambiguous; require explicit software context. The package target excludes jaxlib and plugin distributions.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/jax/json",
+        "https://api.github.com/repos/jax-ml/jax",
+        "https://api.github.com/repos/google/jax"
+      ],
+      "category": "deep_learning_frameworks",
+      "research_exact_aliases": [
+        "JAX library",
+        "JAX framework",
+        "jax-ml/jax",
+        "Google JAX"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2018-10-25T21:25:02Z",
+      "earliest_visible_pypi_upload": "2018-12-07T19:13:36.378605Z",
+      "github_repo_aliases": [
+        "google/jax"
+      ]
+    },
+    {
+      "tool_id": "flax",
+      "name": "Flax",
+      "pypi_package": "flax",
+      "github_repo": "google/flax",
+      "github_repo_id": 233016299,
+      "arxiv_query": "((ti:Flax OR abs:Flax) AND (ti:\"JAX\" OR abs:\"JAX\" OR ti:\"Flax library\" OR abs:\"Flax library\" OR ti:\"Flax framework\" OR abs:\"Flax framework\" OR ti:\"google/flax\" OR abs:\"google/flax\"))",
+      "notes": "Flax is also a plant/fiber term. Require JAX or explicit library context; activity covers the repository, while downloads target flax only.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/flax/json",
+        "https://api.github.com/repos/google/flax"
+      ],
+      "category": "deep_learning_frameworks",
+      "research_exact_aliases": [
+        "Flax library",
+        "Flax framework",
+        "JAX/Flax",
+        "JAX and Flax",
+        "google/flax"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2020-01-10T09:48:37Z",
+      "earliest_visible_pypi_upload": "2020-03-17T10:21:38.652850Z"
+    },
+    {
+      "tool_id": "keras",
+      "name": "Keras",
+      "pypi_package": "keras",
+      "github_repo": "keras-team/keras",
+      "github_repo_id": 33015583,
+      "arxiv_query": "(ti:\"Keras\" OR abs:\"Keras\")",
+      "notes": "Keras packaging and its TensorFlow/multi-backend relationship vary over time; keras downloads are not all Keras API use inside TensorFlow.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/keras/json",
+        "https://api.github.com/repos/keras-team/keras"
+      ],
+      "category": "deep_learning_frameworks",
+      "research_exact_aliases": [
+        "Keras"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2015-03-28T00:35:42Z",
+      "earliest_visible_pypi_upload": "2015-10-11T01:21:00.754076Z"
+    },
+    {
+      "tool_id": "pytorch-lightning",
+      "name": "PyTorch Lightning",
+      "pypi_package": "pytorch-lightning",
+      "github_repo": "Lightning-AI/pytorch-lightning",
+      "github_repo_id": 178626720,
+      "arxiv_query": "(ti:\"PyTorch Lightning\" OR abs:\"PyTorch Lightning\" OR ti:\"pytorch-lightning\" OR abs:\"pytorch-lightning\" OR ti:\"Lightning-AI/pytorch-lightning\" OR abs:\"Lightning-AI/pytorch-lightning\")",
+      "notes": "Never match bare lightning. PyPI Source Code/Homepage currently point to Lightning-AI/lightning, which resolves to the same repository ID. Exclude the separate lightning distribution from this download target.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/pytorch-lightning/json",
+        "https://api.github.com/repos/Lightning-AI/pytorch-lightning",
+        "https://api.github.com/repos/Lightning-AI/lightning"
+      ],
+      "category": "deep_learning_frameworks",
+      "research_exact_aliases": [
+        "PyTorch Lightning",
+        "pytorch-lightning",
+        "Lightning-AI/pytorch-lightning"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2019-03-31T00:45:57Z",
+      "earliest_visible_pypi_upload": "2019-03-31T20:32:02.170529Z",
+      "github_repo_aliases": [
+        "Lightning-AI/lightning"
+      ]
+    },
+    {
+      "tool_id": "accelerate",
+      "name": "Hugging Face Accelerate",
+      "pypi_package": "accelerate",
+      "github_repo": "huggingface/accelerate",
+      "github_repo_id": 308638334,
+      "arxiv_query": "((ti:Accelerate OR abs:Accelerate) AND (ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:\"HuggingFace\" OR abs:\"HuggingFace\" OR ti:\"Accelerate library\" OR abs:\"Accelerate library\" OR ti:\"huggingface/accelerate\" OR abs:\"huggingface/accelerate\"))",
+      "notes": "The verb accelerate is ambiguous. Research candidates require Hugging Face or explicit library context; bare accelerate is never a positive match.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/accelerate/json",
+        "https://api.github.com/repos/huggingface/accelerate"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "Hugging Face Accelerate",
+        "HuggingFace Accelerate",
+        "Accelerate library",
+        "huggingface/accelerate"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2020-10-30T13:27:12Z",
+      "earliest_visible_pypi_upload": "2020-10-30T13:43:42.744106Z"
+    },
+    {
+      "tool_id": "datasets",
+      "name": "Hugging Face Datasets",
+      "pypi_package": "datasets",
+      "github_repo": "huggingface/datasets",
+      "github_repo_id": 250213286,
+      "arxiv_query": "((ti:datasets OR abs:datasets) AND (ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:\"HuggingFace\" OR abs:\"HuggingFace\" OR ti:\"huggingface/datasets\" OR abs:\"huggingface/datasets\"))",
+      "notes": "Never match bare datasets. The current PyPI metadata maps to Hugging Face; older visible PyPI uploads predate the 2020 repository and must not be treated as proof of Hugging Face library age or ownership. Study scope starts in 2023.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/datasets/json",
+        "https://api.github.com/repos/huggingface/datasets"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "Hugging Face Datasets",
+        "HuggingFace Datasets",
+        "huggingface/datasets"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2020-03-26T09:23:22Z",
+      "earliest_visible_pypi_upload": "2015-08-18T00:07:40.556725Z"
+    },
+    {
+      "tool_id": "diffusers",
+      "name": "Hugging Face Diffusers",
+      "pypi_package": "diffusers",
+      "github_repo": "huggingface/diffusers",
+      "github_repo_id": 498011141,
+      "arxiv_query": "((ti:diffusers OR abs:diffusers) AND (ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:\"HuggingFace\" OR abs:\"HuggingFace\" OR ti:\"Diffusers library\" OR abs:\"Diffusers library\" OR ti:\"huggingface/diffusers\" OR abs:\"huggingface/diffusers\"))",
+      "notes": "Bare diffusers can refer to devices or model classes. Require Hugging Face or explicit software-library context; paper model usage is not proof of PyPI installation.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/diffusers/json",
+        "https://api.github.com/repos/huggingface/diffusers"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "Hugging Face Diffusers",
+        "HuggingFace Diffusers",
+        "Diffusers library",
+        "huggingface/diffusers"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2022-05-30T16:04:02Z",
+      "earliest_visible_pypi_upload": "2022-05-30T16:25:48.098747Z"
+    },
+    {
+      "tool_id": "sentence-transformers",
+      "name": "Sentence Transformers",
+      "pypi_package": "sentence-transformers",
+      "github_repo": "huggingface/sentence-transformers",
+      "github_repo_id": 198616978,
+      "arxiv_query": "(ti:\"sentence-transformers\" OR abs:\"sentence-transformers\" OR ti:\"Sentence Transformers library\" OR abs:\"Sentence Transformers library\" OR ti:\"SentenceTransformers library\" OR abs:\"SentenceTransformers library\" OR ti:\"sentence-transformers library\" OR abs:\"sentence-transformers library\" OR ti:\"SBERT library\" OR abs:\"SBERT library\" OR ti:\"UKPLab/sentence-transformers\" OR abs:\"UKPLab/sentence-transformers\" OR ti:\"huggingface/sentence-transformers\" OR abs:\"huggingface/sentence-transformers\")",
+      "notes": "Sentence-transformer architectures and SBERT model mentions are not automatically evidence of library use. Legacy UKPLab/sentence-transformers resolves to the same repository ID.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/sentence-transformers/json",
+        "https://api.github.com/repos/huggingface/sentence-transformers",
+        "https://api.github.com/repos/UKPLab/sentence-transformers"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "sentence-transformers",
+        "Sentence Transformers library",
+        "SentenceTransformers library",
+        "sentence-transformers library",
+        "SBERT library",
+        "UKPLab/sentence-transformers",
+        "huggingface/sentence-transformers"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2019-07-24T10:53:51Z",
+      "earliest_visible_pypi_upload": "2019-07-25T08:09:22.676208Z",
+      "github_repo_aliases": [
+        "UKPLab/sentence-transformers"
+      ]
+    },
+    {
+      "tool_id": "peft",
+      "name": "Hugging Face PEFT",
+      "pypi_package": "peft",
+      "github_repo": "huggingface/peft",
+      "github_repo_id": 570384908,
+      "arxiv_query": "((ti:PEFT OR abs:PEFT) AND (ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:\"HuggingFace\" OR abs:\"HuggingFace\" OR ti:\"PEFT library\" OR abs:\"PEFT library\" OR ti:\"huggingface/peft\" OR abs:\"huggingface/peft\"))",
+      "notes": "PEFT commonly names the parameter-efficient fine-tuning method family. Require explicit library context. First currently visible PyPI upload is 2023-01-19; earlier package-target dates are unestablished, not synthetic zeros.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/peft/json",
+        "https://api.github.com/repos/huggingface/peft"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "Hugging Face PEFT",
+        "HuggingFace PEFT",
+        "PEFT library",
+        "huggingface/peft"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2022-11-25T03:51:09Z",
+      "earliest_visible_pypi_upload": "2023-01-19T16:41:25.146082Z"
+    },
+    {
+      "tool_id": "trl",
+      "name": "Hugging Face TRL",
+      "pypi_package": "trl",
+      "github_repo": "huggingface/trl",
+      "github_repo_id": 250510075,
+      "arxiv_query": "(ti:\"Hugging Face TRL\" OR abs:\"Hugging Face TRL\" OR ti:\"HuggingFace TRL\" OR abs:\"HuggingFace TRL\" OR ti:\"TRL library\" OR abs:\"TRL library\" OR ti:\"huggingface/trl\" OR abs:\"huggingface/trl\")",
+      "notes": "TRL is an ambiguous acronym. Require Hugging Face or explicit library/repository context; generic reinforcement-learning or technology-readiness-level references are not matches.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/trl/json",
+        "https://api.github.com/repos/huggingface/trl"
+      ],
+      "category": "llm_and_generative_tooling",
+      "research_exact_aliases": [
+        "Hugging Face TRL",
+        "HuggingFace TRL",
+        "TRL library",
+        "huggingface/trl"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2020-03-27T10:54:55Z",
+      "earliest_visible_pypi_upload": "2020-03-30T16:50:54.322733Z"
+    },
+    {
+      "tool_id": "optuna",
+      "name": "Optuna",
+      "pypi_package": "optuna",
+      "github_repo": "optuna/optuna",
+      "github_repo_id": 122299416,
+      "arxiv_query": "(ti:\"Optuna\" OR abs:\"Optuna\")",
+      "notes": "Research attention is distinct from package installation. Use only optuna distribution downloads, not all Optuna ecosystem packages.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/optuna/json",
+        "https://api.github.com/repos/optuna/optuna"
+      ],
+      "category": "mlops_and_optimization",
+      "research_exact_aliases": [
+        "Optuna"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2018-02-21T06:12:56Z",
+      "earliest_visible_pypi_upload": "2018-10-19T03:24:34.897257Z"
+    },
+    {
+      "tool_id": "catboost",
+      "name": "CatBoost",
+      "pypi_package": "catboost",
+      "github_repo": "catboost/catboost",
+      "github_repo_id": 97556265,
+      "arxiv_query": "(ti:\"CatBoost\" OR abs:\"CatBoost\")",
+      "notes": "CatBoost research references can concern the method or R/Java/C++ implementations; downloads target the Python distribution only.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/catboost/json",
+        "https://api.github.com/repos/catboost/catboost"
+      ],
+      "category": "classical_ml_and_explainability",
+      "research_exact_aliases": [
+        "CatBoost"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2017-07-18T05:29:04Z",
+      "earliest_visible_pypi_upload": "2017-07-17T19:14:31.151017Z"
+    },
+    {
+      "tool_id": "shap",
+      "name": "SHAP",
+      "pypi_package": "shap",
+      "github_repo": "shap/shap",
+      "github_repo_id": 74505259,
+      "arxiv_query": "((ti:SHAP OR abs:SHAP) AND (ti:\"SHAP library\" OR abs:\"SHAP library\" OR ti:\"SHAP Python package\" OR abs:\"SHAP Python package\" OR ti:\"shap/shap\" OR abs:\"shap/shap\" OR ti:\"slundberg/shap\" OR abs:\"slundberg/shap\"))",
+      "notes": "SHAP also names an explanation method family. Require explicit library/Python-package context. Legacy slundberg/shap resolves to the same repository ID.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/shap/json",
+        "https://api.github.com/repos/shap/shap",
+        "https://api.github.com/repos/slundberg/shap"
+      ],
+      "category": "classical_ml_and_explainability",
+      "research_exact_aliases": [
+        "SHAP library",
+        "SHAP Python package",
+        "shap/shap",
+        "slundberg/shap"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2016-11-22T19:17:08Z",
+      "earliest_visible_pypi_upload": "2016-12-01T18:38:09.078917Z",
+      "github_repo_aliases": [
+        "slundberg/shap"
+      ]
+    },
+    {
+      "tool_id": "wandb",
+      "name": "Weights & Biases",
+      "pypi_package": "wandb",
+      "github_repo": "wandb/wandb",
+      "github_repo_id": 86031674,
+      "arxiv_query": "(ti:\"Weights & Biases\" OR abs:\"Weights & Biases\" OR ti:\"Weights and Biases\" OR abs:\"Weights and Biases\" OR ti:\"wandb\" OR abs:\"wandb\")",
+      "notes": "wandb is the Python SDK/CLI distribution. Its downloads and repository activity are not counts of hosted-platform users or paid customers.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/wandb/json",
+        "https://api.github.com/repos/wandb/wandb"
+      ],
+      "category": "mlops_and_optimization",
+      "research_exact_aliases": [
+        "Weights & Biases",
+        "Weights and Biases",
+        "wandb"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2017-03-24T05:46:23Z",
+      "earliest_visible_pypi_upload": "2017-03-24T06:01:16.418282Z"
+    },
+    {
+      "tool_id": "dvc",
+      "name": "DVC",
+      "pypi_package": "dvc",
+      "github_repo": "treeverse/dvc",
+      "github_repo_id": 83878269,
+      "arxiv_query": "(ti:\"DVC library\" OR abs:\"DVC library\" OR ti:\"DVC tool\" OR abs:\"DVC tool\" OR ti:\"DVC pipeline\" OR abs:\"DVC pipeline\" OR ti:\"Data Version Control\" OR abs:\"Data Version Control\" OR ti:\"iterative/dvc\" OR abs:\"iterative/dvc\" OR ti:\"treeverse/dvc\" OR abs:\"treeverse/dvc\")",
+      "notes": "DVC is an ambiguous acronym. PyPI currently points to treeverse/dvc; iterative/dvc redirects to repository ID 83878269. Distribution extras and separately packaged remote backends are excluded from download target.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/dvc/json",
+        "https://api.github.com/repos/treeverse/dvc",
+        "https://api.github.com/repos/iterative/dvc"
+      ],
+      "category": "mlops_and_optimization",
+      "research_exact_aliases": [
+        "DVC library",
+        "DVC tool",
+        "DVC pipeline",
+        "Data Version Control",
+        "iterative/dvc",
+        "treeverse/dvc"
+      ],
+      "research_ambiguous": true,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2017-03-04T08:16:33Z",
+      "earliest_visible_pypi_upload": "2017-05-05T23:05:51.213421Z",
+      "github_repo_aliases": [
+        "iterative/dvc"
+      ]
+    },
+    {
+      "tool_id": "bentoml",
+      "name": "BentoML",
+      "pypi_package": "bentoml",
+      "github_repo": "bentoml/BentoML",
+      "github_repo_id": 178976529,
+      "arxiv_query": "(ti:\"BentoML\" OR abs:\"BentoML\")",
+      "notes": "Use bentoml package downloads as the target; repository activity or hosted Bento services are different units of activity.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/bentoml/json",
+        "https://api.github.com/repos/bentoml/BentoML"
+      ],
+      "category": "mlops_and_optimization",
+      "research_exact_aliases": [
+        "BentoML"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2019-04-02T01:39:27Z",
+      "earliest_visible_pypi_upload": "2019-01-15T21:43:46.512398Z"
+    },
+    {
+      "tool_id": "onnx",
+      "name": "ONNX",
+      "pypi_package": "onnx",
+      "github_repo": "onnx/onnx",
+      "github_repo_id": 102692863,
+      "arxiv_query": "(ti:\"ONNX\" OR abs:\"ONNX\" OR ti:\"Open Neural Network Exchange\" OR abs:\"Open Neural Network Exchange\")",
+      "notes": "ONNX often names the interchange standard/model format rather than the Python package. Interpret mentions as ecosystem research attention, not verified Python-package usage.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/onnx/json",
+        "https://api.github.com/repos/onnx/onnx"
+      ],
+      "category": "interchange_and_inference",
+      "research_exact_aliases": [
+        "ONNX",
+        "Open Neural Network Exchange"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2017-09-07T04:53:45Z",
+      "earliest_visible_pypi_upload": "2017-09-07T07:46:59.342937Z"
+    },
+    {
+      "tool_id": "onnxruntime",
+      "name": "ONNX Runtime",
+      "pypi_package": "onnxruntime",
+      "github_repo": "microsoft/onnxruntime",
+      "github_repo_id": 156939672,
+      "arxiv_query": "(ti:\"ONNX Runtime\" OR abs:\"ONNX Runtime\" OR ti:\"ONNXRuntime\" OR abs:\"ONNXRuntime\" OR ti:\"onnxruntime\" OR abs:\"onnxruntime\")",
+      "notes": "Target onnxruntime distribution only. onnxruntime-gpu and platform-specific variants are intentionally separate and can shift usage between distributions.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/onnxruntime/json",
+        "https://api.github.com/repos/microsoft/onnxruntime"
+      ],
+      "category": "interchange_and_inference",
+      "research_exact_aliases": [
+        "ONNX Runtime",
+        "ONNXRuntime"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2018-11-10T02:22:53Z",
+      "earliest_visible_pypi_upload": "2018-09-21T19:19:30.401726Z"
+    },
+    {
+      "tool_id": "spacy",
+      "name": "spaCy",
+      "pypi_package": "spacy",
+      "github_repo": "explosion/spaCy",
+      "github_repo_id": 21467110,
+      "arxiv_query": "(ti:\"spaCy\" OR abs:\"spaCy\")",
+      "notes": "spaCy pipeline/model packages are separate distributions; count spacy only. Match this software name with token boundaries to avoid substrings.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/spacy/json",
+        "https://api.github.com/repos/explosion/spaCy"
+      ],
+      "category": "nlp",
+      "research_exact_aliases": [
+        "spaCy"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2014-07-03T15:15:40Z",
+      "earliest_visible_pypi_upload": "2015-01-25T07:58:26.587756Z"
+    },
+    {
+      "tool_id": "gensim",
+      "name": "Gensim",
+      "pypi_package": "gensim",
+      "github_repo": "piskvorky/gensim",
+      "github_repo_id": 1349775,
+      "arxiv_query": "(ti:\"Gensim\" OR abs:\"Gensim\")",
+      "notes": "PyPI Source currently uses RaRe-Technologies/gensim, which resolves to the current piskvorky/gensim repository ID 1349775. Match stable ID across ownership changes.",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/gensim/json",
+        "https://api.github.com/repos/piskvorky/gensim",
+        "https://api.github.com/repos/RaRe-Technologies/gensim"
+      ],
+      "category": "nlp",
+      "research_exact_aliases": [
+        "Gensim"
+      ],
+      "research_ambiguous": false,
+      "mapping_status": "frozen_conditional_study_cohort_research_candidates_unreviewed",
+      "mapping_verified_at": "2026-11-02T20:38:11.748077+00:00",
+      "github_created_at": "2011-02-10T07:43:04Z",
+      "earliest_visible_pypi_upload": "2010-03-18T12:06:45.580042Z",
+      "github_repo_aliases": [
+        "RaRe-Technologies/gensim"
+      ]
+    }
+  ]
+}

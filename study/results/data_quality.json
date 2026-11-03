@@ -1,0 +1,180 @@
+{
+  "source_policy": "capture_quality_v1",
+  "profile": "validated_primary",
+  "validation_status": "passed",
+  "as_of": "2026-11-03T01:25:21.455306Z",
+  "cohort_sha256": "f89567ca699597ce9cddc6ac52efa718c4a2310cf06078724f1e5655d6caaf4c",
+  "source_policy_sha256": "0a6ca56c2ce30e4b968f0608e94fd478b2390ec3f16ce12d66421b4a2a986848",
+  "enabled_feature_groups": [
+    "dl",
+    "release",
+    "controls"
+  ],
+  "excluded_feature_groups": [
+    "gh",
+    "research"
+  ],
+  "sources": {
+    "pypi": {
+      "status": "primary_enabled",
+      "primary_eligible": true,
+      "measurement": "Artifact requests with filenames ending .whl, .tar.gz or .zip; not unique users, installs or retention.",
+      "measurement_change_date": "2026-08-24",
+      "measurement_change_handling": "Apply the same artifact-only filter throughout history; retain logged_objects and excluded_requests in raw records and verify their arithmetic. This reduces the documented metadata-counting break but does not certify invariant download behavior.",
+      "evidence": [
+        "https://docs.pypi.org/api/bigquery/",
+        "https://blog.pypi.org/posts/2026-08-31-download-counts/"
+      ]
+    },
+    "pypi_releases": {
+      "status": "primary_enabled",
+      "primary_eligible": true,
+      "measurement": "One event per retained visible package version at its earliest artifact upload time; multiple wheel/sdist files are not multiple releases.",
+      "limitation": "Retrospective currently/previously retained visible artifacts can omit deleted history; no claim of a real-time metadata vintage.",
+      "evidence": [
+        "https://docs.pypi.org/api/json/"
+      ]
+    },
+    "gharchive": {
+      "status": "capture_limited",
+      "primary_eligible": false,
+      "capture_validated": false,
+      "known_degradation_start": "2025-05-24",
+      "earlier_capture_status": "unvalidated_capture",
+      "later_capture_status": "known_capture_degradation",
+      "measurement": "Observed captured public GitHub events and distinct captured event actors. A captured zero is not proof of zero repository activity. PushEvents are not commit counts.",
+      "policy": "Exclude every GH numeric feature, including missingness flags, from primary modeling for all dates. Preserve observed_gh_* series for diagnostics. Mask gh_* event/actor features in any day/week overlapping known degradation. Earlier capture remains unvalidated, not certified complete.",
+      "retrieval_is_not_capture": "Successful queries, nonempty global tables, date coverage, checksums and zero missing event IDs validate retrieval only. They cannot establish upstream capture completeness.",
+      "correction": "No corrected counts or inverse-global-volume scaling are estimated. Independent repository/date/type capture validation is required before re-enabling GH predictors.",
+      "evidence": [
+        "https://github.com/igrigorik/gharchive.org/issues/310",
+        "https://github.com/igrigorik/gharchive.org/issues/320",
+        "https://github.com/igrigorik/gharchive.org/issues/323",
+        "https://github.com/igrigorik/gharchive.org/issues/326",
+        "https://github.blog/changelog/2025-08-08-upcoming-changes-to-github-events-api-payloads/"
+      ],
+      "evidence_scope": "Firsthand source-project issue reports and operators document capture loss; these are not certified missingness fractions for our cohort. The May 24 boundary is the first known multi-event degradation, not a guarantee for earlier dates. OpenDigger history beginning September 6, 2026 cannot repair the January-August holdout."
+    },
+    "arxiv": {
+      "status": "quarantined",
+      "primary_eligible": false,
+      "measurement": "Current revised paper metadata and unreviewed tool-paper candidate matches.",
+      "limitation": "No historical first-seen vintages or reviewed match labels; excluded from historical forecasts."
+    }
+  },
+  "content_checks": {
+    "status": "passed",
+    "errors": [],
+    "tools": 30,
+    "daily_rows": 42060,
+    "weekly_rows": 6000,
+    "daily_days_per_tool": 1402,
+    "weekly_weeks_per_tool": 200,
+    "primary_missing_counts": {
+      "daily": {
+        "dl_downloads": 64,
+        "release_count": 64
+      },
+      "weekly": {
+        "dl_downloads": 10,
+        "release_count": 10
+      }
+    },
+    "unexpected_primary_missing_counts": {
+      "dl_downloads": 0,
+      "release_count": 0
+    },
+    "expected_pre_artifact_days_by_tool": {
+      "ray": 0,
+      "llama-index": 46,
+      "jax": 0,
+      "wandb": 0,
+      "langchain": 0,
+      "sentence-transformers": 0,
+      "accelerate": 0,
+      "onnxruntime": 0,
+      "tensorflow": 0,
+      "xgboost": 0,
+      "transformers": 0,
+      "flax": 0,
+      "dvc": 0,
+      "datasets": 0,
+      "bentoml": 0,
+      "shap": 0,
+      "catboost": 0,
+      "scikit-learn": 0,
+      "lightgbm": 0,
+      "pytorch-lightning": 0,
+      "optuna": 0,
+      "diffusers": 0,
+      "mlflow": 0,
+      "trl": 0,
+      "onnx": 0,
+      "spacy": 0,
+      "peft": 18,
+      "keras": 0,
+      "gensim": 0,
+      "pytorch": 0
+    },
+    "gh_capture_quality_daily_counts": {
+      "unvalidated_capture": 26220,
+      "known_capture_degradation": 15840
+    },
+    "gh_capture_quality_weekly_counts": {
+      "unvalidated_capture": 3720,
+      "known_capture_degradation": 2280
+    },
+    "retrieval_complete_does_not_imply_capture_validity": true,
+    "gh_primary_eligible_rows": 0,
+    "expected_missingness": {
+      "pre_artifact": "Downloads and release counts before the first retained visible artifact remain NaN, never zero. A partial first week remains NaN.",
+      "warmup": "Rolling/lagged features need their stated prior full weeks. Future labels need eight full outcome weeks plus the availability lag. Expected warmup and not-yet-mature labels are not missing source retrieval.",
+      "frozen_snapshot_check": {
+        "as_of_utc_date": "2026-11-02",
+        "tools": 30,
+        "daily_rows": 42030,
+        "weekly_rows": 6000,
+        "daily_pre_artifact_missing_per_primary_count": 64,
+        "weekly_pre_artifact_missing_per_primary_count": 10
+      }
+    }
+  },
+  "raw_spot_checks": {
+    "status": "passed",
+    "errors": [],
+    "sample_week_starts": [
+      "2023-01-02",
+      "2023-06-26",
+      "2024-07-01",
+      "2025-05-19",
+      "2025-05-26",
+      "2025-06-30",
+      "2025-10-06",
+      "2025-10-13",
+      "2026-03-02",
+      "2026-06-29",
+      "2026-08-17",
+      "2026-08-24",
+      "2026-10-19",
+      "2026-10-26"
+    ],
+    "checked": {
+      "pypi_eligible_raw_rows_arithmetic": 56450,
+      "pypi_tool_days": 2940,
+      "gharchive_tool_days": 2940,
+      "visible_release_versions": 4974,
+      "visible_artifact_files": 22081,
+      "release_tool_weeks": 30,
+      "gh_actor_tool_weeks": 30
+    },
+    "raw_objects_read": 451,
+    "upstream_capture_validated": false,
+    "scope": "Independent retained HTTP-body consistency, not proof of source completeness."
+  },
+  "input_hashes": {
+    "daily_normalized.parquet": "0bed764a240f568351bbdc99a0578b0c7359962eab2ff9732eb5652907c618fb",
+    "weekly_features.parquet": "4256528212eae88c3e467045fe98aa1e0ccd0619fc54fe82fcb8152865f132ef",
+    "source_quality.json": "0a6ca56c2ce30e4b968f0608e94fd478b2390ec3f16ce12d66421b4a2a986848"
+  },
+  "scope": "Pass applies to enabled primary sources. Retrieval completeness does not certify upstream GH capture. Research and all GH predictors remain excluded."
+}

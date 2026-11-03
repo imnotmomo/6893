@@ -1,0 +1,146 @@
+{
+  "tools": [
+    {
+      "tool_id": "pytorch",
+      "name": "PyTorch",
+      "pypi_package": "torch",
+      "github_repo": "pytorch/pytorch",
+      "arxiv_query": "(ti:PyTorch OR abs:PyTorch)",
+      "notes": "The project name is PyTorch but the PyPI distribution is torch. Counts target this PyPI package, not all framework installations or users.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/torch/json",
+        "https://api.github.com/repos/pytorch/pytorch"
+      ],
+      "github_repo_id": 65600975
+    },
+    {
+      "tool_id": "tensorflow",
+      "name": "TensorFlow",
+      "pypi_package": "tensorflow",
+      "github_repo": "tensorflow/tensorflow",
+      "arxiv_query": "(ti:TensorFlow OR abs:TensorFlow)",
+      "notes": "Keep tensorflow downloads separate from related platform distributions and ecosystem packages. Packaging changes may affect the target independently of usage.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/tensorflow/json",
+        "https://api.github.com/repos/tensorflow/tensorflow"
+      ],
+      "github_repo_id": 45717250
+    },
+    {
+      "tool_id": "transformers",
+      "name": "Hugging Face Transformers",
+      "pypi_package": "transformers",
+      "github_repo": "huggingface/transformers",
+      "arxiv_query": "((ti:\"Hugging Face\" OR abs:\"Hugging Face\" OR ti:HuggingFace OR abs:HuggingFace) AND (ti:transformers OR abs:transformers))",
+      "notes": "Do not use bare transformers as a paper match: it usually names an architecture rather than this library. The contextual query remains a candidate and can still yield false positives or miss library mentions.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/transformers/json",
+        "https://api.github.com/repos/huggingface/transformers"
+      ],
+      "github_repo_id": 155220641
+    },
+    {
+      "tool_id": "scikit-learn",
+      "name": "scikit-learn",
+      "pypi_package": "scikit-learn",
+      "github_repo": "scikit-learn/scikit-learn",
+      "arxiv_query": "(ti:\"scikit-learn\" OR abs:\"scikit-learn\" OR ti:sklearn OR abs:sklearn)",
+      "notes": "Use scikit-learn as the package target. sklearn is only a candidate research/import alias in this mapping, not a second download series.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/scikit-learn/json",
+        "https://api.github.com/repos/scikit-learn/scikit-learn"
+      ],
+      "github_repo_id": 843222
+    },
+    {
+      "tool_id": "xgboost",
+      "name": "XGBoost",
+      "pypi_package": "xgboost",
+      "github_repo": "dmlc/xgboost",
+      "arxiv_query": "(ti:XGBoost OR abs:XGBoost)",
+      "notes": "Research mentions may refer to the boosting method or non-Python implementations; they are attention signals, not proof of PyPI usage.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/xgboost/json",
+        "https://api.github.com/repos/dmlc/xgboost"
+      ],
+      "github_repo_id": 16587283
+    },
+    {
+      "tool_id": "lightgbm",
+      "name": "LightGBM",
+      "pypi_package": "lightgbm",
+      "github_repo": "lightgbm-org/LightGBM",
+      "arxiv_query": "(ti:LightGBM OR abs:LightGBM)",
+      "notes": "Current PyPI metadata points to lightgbm-org/LightGBM. The legacy microsoft/LightGBM API URL redirects to the same repository ID, 64991887. Historical event collection must account for repository renames. Paper mentions can describe the method rather than Python-package use.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/lightgbm/json",
+        "https://api.github.com/repos/lightgbm-org/LightGBM",
+        "https://api.github.com/repos/microsoft/LightGBM"
+      ],
+      "github_repo_id": 64991887
+    },
+    {
+      "tool_id": "langchain",
+      "name": "LangChain",
+      "pypi_package": "langchain",
+      "github_repo": "langchain-ai/langchain",
+      "arxiv_query": "(ti:LangChain OR abs:LangChain)",
+      "notes": "Repository activity covers a monorepo, while this target counts only langchain, not langchain-core or other integration packages. Keep the package definition fixed rather than silently summing ecosystem packages.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/langchain/json",
+        "https://api.github.com/repos/langchain-ai/langchain"
+      ],
+      "github_repo_id": 552661142
+    },
+    {
+      "tool_id": "llama-index",
+      "name": "LlamaIndex",
+      "pypi_package": "llama-index",
+      "github_repo": "run-llama/llama_index",
+      "arxiv_query": "(ti:LlamaIndex OR abs:LlamaIndex OR ti:\"Llama Index\" OR abs:\"Llama Index\")",
+      "notes": "llama-index is an umbrella distribution; do not equate its downloads with every component such as llama-index-core. The legacy jerryjliu/gpt_index repository URL resolves to the same repository ID, 560704231. Earlier GPT Index names/package history need a separate date-aligned review before backfilling 2023; those aliases are not included automatically.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/llama-index/json",
+        "https://api.github.com/repos/run-llama/llama_index",
+        "https://api.github.com/repos/jerryjliu/gpt_index"
+      ],
+      "github_repo_id": 560704231
+    },
+    {
+      "tool_id": "mlflow",
+      "name": "MLflow",
+      "pypi_package": "mlflow",
+      "github_repo": "mlflow/mlflow",
+      "arxiv_query": "(ti:MLflow OR abs:MLflow)",
+      "notes": "Use the mlflow distribution only for the pilot target; repository-wide activity and related distributions such as mlflow-skinny are not identical units of adoption.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/mlflow/json",
+        "https://api.github.com/repos/mlflow/mlflow"
+      ],
+      "github_repo_id": 136202695
+    },
+    {
+      "tool_id": "ray",
+      "name": "Ray",
+      "pypi_package": "ray",
+      "github_repo": "ray-project/ray",
+      "arxiv_query": "(ti:\"Ray Tune\" OR abs:\"Ray Tune\" OR ti:RLlib OR abs:RLlib OR ti:\"Ray framework\" OR abs:\"Ray framework\" OR ti:\"ray-project\" OR abs:\"ray-project\")",
+      "notes": "Never use bare ray as the research query because of unrelated scientific meanings. This narrower candidate covers selected Ray ecosystem terms, may miss core Ray papers, and requires manual relevance checks.",
+      "mapping_status": "pilot_candidate_awaiting_team_approval",
+      "mapping_evidence_urls": [
+        "https://pypi.org/pypi/ray/json",
+        "https://api.github.com/repos/ray-project/ray"
+      ],
+      "github_repo_id": 71932349
+    }
+  ]
+}

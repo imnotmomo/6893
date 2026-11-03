@@ -1,0 +1,159 @@
+{
+  "source": "pypi_immutable_distribution_metadata",
+  "table": "bigquery-public-data.pypi.distribution_metadata",
+  "query": "WITH source AS (\n  SELECT name, version, metadata_version, summary, requires_dist, requires_python, classifiers, project_urls, upload_time, filename, path, sha256_digest, size, python_version, packagetype\n  FROM `bigquery-public-data.pypi.distribution_metadata`\n  WHERE upload_time < TIMESTAMP(@end_date, 'UTC') OR upload_time IS NULL\n), candidates AS (\n  SELECT DISTINCT REGEXP_REPLACE(LOWER(name), r'[-_.]+', '-') AS package\n  FROM source\n  WHERE REGEXP_REPLACE(LOWER(name), r'[-_.]+', '-') IN UNNEST(@target_packages)\n     OR EXISTS (\n       SELECT 1 FROM UNNEST(requires_dist) AS requirement\n       WHERE REGEXP_REPLACE(LOWER(REGEXP_EXTRACT(requirement, r'^\\s*([A-Za-z0-9][A-Za-z0-9._-]*)')), r'[-_.]+', '-') IN UNNEST(@target_packages)\n     )\n)\nSELECT source.*\nFROM source\nJOIN candidates ON REGEXP_REPLACE(LOWER(name), r'[-_.]+', '-') = candidates.package\nORDER BY name, version, upload_time, filename, path",
+  "query_parameters": [
+    {
+      "name": "end_date",
+      "parameterType": {
+        "type": "DATE"
+      },
+      "parameterValue": {
+        "value": "2026-11-03"
+      }
+    },
+    {
+      "name": "target_packages",
+      "parameterType": {
+        "type": "ARRAY",
+        "arrayType": {
+          "type": "STRING"
+        }
+      },
+      "parameterValue": {
+        "arrayValues": [
+          {
+            "value": "accelerate"
+          },
+          {
+            "value": "bentoml"
+          },
+          {
+            "value": "catboost"
+          },
+          {
+            "value": "datasets"
+          },
+          {
+            "value": "diffusers"
+          },
+          {
+            "value": "dvc"
+          },
+          {
+            "value": "flax"
+          },
+          {
+            "value": "gensim"
+          },
+          {
+            "value": "jax"
+          },
+          {
+            "value": "keras"
+          },
+          {
+            "value": "langchain"
+          },
+          {
+            "value": "lightgbm"
+          },
+          {
+            "value": "llama-index"
+          },
+          {
+            "value": "mlflow"
+          },
+          {
+            "value": "onnx"
+          },
+          {
+            "value": "onnxruntime"
+          },
+          {
+            "value": "optuna"
+          },
+          {
+            "value": "peft"
+          },
+          {
+            "value": "pytorch-lightning"
+          },
+          {
+            "value": "ray"
+          },
+          {
+            "value": "scikit-learn"
+          },
+          {
+            "value": "sentence-transformers"
+          },
+          {
+            "value": "shap"
+          },
+          {
+            "value": "spacy"
+          },
+          {
+            "value": "tensorflow"
+          },
+          {
+            "value": "torch"
+          },
+          {
+            "value": "transformers"
+          },
+          {
+            "value": "trl"
+          },
+          {
+            "value": "wandb"
+          },
+          {
+            "value": "xgboost"
+          }
+        ]
+      }
+    }
+  ],
+  "end_exclusive": "2026-11-03",
+  "mode": "candidate_history",
+  "query_sha256": "8883e4af92eea7a3389dcf201aca2475ac0404ec9b11a1a05ab6730a72b56fc8",
+  "target_package_to_tool": {
+    "torch": "pytorch",
+    "tensorflow": "tensorflow",
+    "transformers": "transformers",
+    "scikit-learn": "scikit-learn",
+    "xgboost": "xgboost",
+    "lightgbm": "lightgbm",
+    "langchain": "langchain",
+    "llama-index": "llama-index",
+    "mlflow": "mlflow",
+    "ray": "ray",
+    "jax": "jax",
+    "flax": "flax",
+    "keras": "keras",
+    "pytorch-lightning": "pytorch-lightning",
+    "accelerate": "accelerate",
+    "datasets": "datasets",
+    "diffusers": "diffusers",
+    "sentence-transformers": "sentence-transformers",
+    "peft": "peft",
+    "trl": "trl",
+    "optuna": "optuna",
+    "catboost": "catboost",
+    "shap": "shap",
+    "wandb": "wandb",
+    "dvc": "dvc",
+    "bentoml": "bentoml",
+    "onnx": "onnx",
+    "onnxruntime": "onnxruntime",
+    "spacy": "spacy",
+    "gensim": "gensim"
+  },
+  "row_grain": "uploaded distribution artifact metadata",
+  "pre_study_history_required": true,
+  "requires_shared_budget_ledger": true,
+  "historical_policy": "Retrospective immutable upload-event reconstruction; observed_at is collection time, not a real-time historical vintage.",
+  "documentation": "https://docs.pypi.org/api/bigquery/"
+}

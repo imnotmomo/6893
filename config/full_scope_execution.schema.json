@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full-scope BigQuery free-first execution policy",
+  "description": "Ordered unbilled execution projects. This policy never resets the existing backfill budget or moves an already reserved query. Monthly baseline evidence must be refreshed explicitly; billing is checked again before every new sandbox insert.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format_version", "enabled", "sources", "allow_paid_fallback", "free_projects"],
+  "properties": {
+    "format_version": {"const": 1},
+    "enabled": {"type": "boolean"},
+    "sources": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "allow_paid_fallback": {"type": "boolean"},
+    "legacy_projects": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/project"}},
+    "free_projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["project_id", "billing_month", "allocation_limit_bytes", "baseline_usage_bytes", "baseline_evidence"],
+        "properties": {
+          "project_id": {"$ref": "#/$defs/project"},
+          "billing_month": {"type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"},
+          "allocation_limit_bytes": {"type": "integer", "minimum": 0, "maximum": 1099511627776},
+          "baseline_usage_bytes": {"type": "integer", "minimum": 0, "maximum": 1099511627776},
+          "baseline_evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "project": {"type": "string", "pattern": "^[a-z][a-z0-9-]{4,61}[a-z0-9]$"}
+  }
+}

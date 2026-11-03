@@ -1,0 +1,437 @@
+{
+  "profile": "retrospective_git_sensitivity",
+  "analysis_type": "posthoc_retrospective_git_sensitivity",
+  "primary_eligible": false,
+  "historical_public_availability": "unknown",
+  "previously_examined_2026": true,
+  "note": "Posthoc sensitivity analysis of previously examined 2026 outcomes. Current surviving default-branch history and committer dates do not certify historical public availability, recover deleted/rewritten history, or restore GitHub PushEvents. No primary model selection or promotion is performed.",
+  "generated_at": "2026-11-03T01:34:23.984835+00:00",
+  "as_of": "2026-11-03T01:25:21.455306+00:00",
+  "primary_snapshot": "/home/ubuntu/6893/data/study/runs/20261103T012521Z-7fe27982",
+  "primary_manifest_sha256": "31851ae4ed3844f1ebdf405fade7e8332c60e96b4992f79cb935be81cf63c3eb",
+  "primary_quality_report_sha256": "6f58bd92865fab272b547e889951fafbd3a32651e8df132c8c10083c90d9009e",
+  "registry_sha256": "f89567ca699597ce9cddc6ac52efa718c4a2310cf06078724f1e5655d6caaf4c",
+  "git_manifest_sha256": "88dc6a5520e70cd24ddfda98b774f610340e91ff86de99b220ed4525df519403",
+  "git_weekly_sha256": "ec822726f0b4865345b5cd38baf25c64a83d3deddd207141abe7cbb7c0d5c64f",
+  "recipes": {
+    "ridge_dl_release_common": {
+      "kind": "ridge",
+      "features": [
+        "dl_downloads",
+        "dl_lag_0",
+        "dl_lag_1",
+        "dl_lag_2",
+        "dl_lag_3",
+        "dl_lag_4",
+        "dl_lag_5",
+        "dl_lag_6",
+        "dl_lag_7",
+        "dl_log_change_1w",
+        "dl_log_change_4w",
+        "dl_log_change_8w",
+        "dl_log_downloads",
+        "dl_log_median_4w",
+        "release_count",
+        "release_count_4w",
+        "tool_age_weeks"
+      ]
+    },
+    "ridge_dl_release_git": {
+      "kind": "ridge",
+      "features": [
+        "dl_downloads",
+        "dl_lag_0",
+        "dl_lag_1",
+        "dl_lag_2",
+        "dl_lag_3",
+        "dl_lag_4",
+        "dl_lag_5",
+        "dl_lag_6",
+        "dl_lag_7",
+        "dl_log_change_1w",
+        "dl_log_change_4w",
+        "dl_log_change_8w",
+        "dl_log_downloads",
+        "dl_log_median_4w",
+        "release_count",
+        "release_count_4w",
+        "tool_age_weeks",
+        "git_reachable_commit_count",
+        "git_first_parent_commit_count",
+        "git_reachable_commit_count_log1p",
+        "git_reachable_commit_count_sum_4w",
+        "git_reachable_commit_count_log1p_sum_4w",
+        "git_first_parent_commit_count_log1p",
+        "git_first_parent_commit_count_sum_4w",
+        "git_first_parent_commit_count_log1p_sum_4w"
+      ]
+    },
+    "histgb_dl_release_common": {
+      "kind": "histgb",
+      "features": [
+        "dl_downloads",
+        "dl_lag_0",
+        "dl_lag_1",
+        "dl_lag_2",
+        "dl_lag_3",
+        "dl_lag_4",
+        "dl_lag_5",
+        "dl_lag_6",
+        "dl_lag_7",
+        "dl_log_change_1w",
+        "dl_log_change_4w",
+        "dl_log_change_8w",
+        "dl_log_downloads",
+        "dl_log_median_4w",
+        "release_count",
+        "release_count_4w",
+        "tool_age_weeks"
+      ]
+    },
+    "histgb_dl_release_git": {
+      "kind": "histgb",
+      "features": [
+        "dl_downloads",
+        "dl_lag_0",
+        "dl_lag_1",
+        "dl_lag_2",
+        "dl_lag_3",
+        "dl_lag_4",
+        "dl_lag_5",
+        "dl_lag_6",
+        "dl_lag_7",
+        "dl_log_change_1w",
+        "dl_log_change_4w",
+        "dl_log_change_8w",
+        "dl_log_downloads",
+        "dl_log_median_4w",
+        "release_count",
+        "release_count_4w",
+        "tool_age_weeks",
+        "git_reachable_commit_count",
+        "git_first_parent_commit_count",
+        "git_reachable_commit_count_log1p",
+        "git_reachable_commit_count_sum_4w",
+        "git_reachable_commit_count_log1p_sum_4w",
+        "git_first_parent_commit_count_log1p",
+        "git_first_parent_commit_count_sum_4w",
+        "git_first_parent_commit_count_log1p_sum_4w"
+      ]
+    }
+  },
+  "git_feature_columns": [
+    "git_reachable_commit_count",
+    "git_first_parent_commit_count",
+    "git_reachable_commit_count_log1p",
+    "git_reachable_commit_count_sum_4w",
+    "git_reachable_commit_count_log1p_sum_4w",
+    "git_first_parent_commit_count_log1p",
+    "git_first_parent_commit_count_sum_4w",
+    "git_first_parent_commit_count_log1p_sum_4w"
+  ],
+  "date_basis": "UTC committer date; anomaly records retained without filtering or invented corrections",
+  "git_tool_date_anomalies": {
+    "pytorch": {
+      "author_after_committer": 124,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 2,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "tensorflow": {
+      "author_after_committer": 29,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 12,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "transformers": {
+      "author_after_committer": 2,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 47,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "scikit-learn": {
+      "author_after_committer": 77,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 26,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "xgboost": {
+      "author_after_committer": 11,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 2,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "lightgbm": {
+      "author_after_committer": 9,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "langchain": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 11,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "llama-index": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "mlflow": {
+      "author_after_committer": 6,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 57,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "ray": {
+      "author_after_committer": 33,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "jax": {
+      "author_after_committer": 3,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 1,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "flax": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "keras": {
+      "author_after_committer": 14,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 6,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "pytorch-lightning": {
+      "author_after_committer": 6,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "accelerate": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 1,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "datasets": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 1,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "diffusers": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 2,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "sentence-transformers": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "peft": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "trl": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "optuna": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "catboost": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 43,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "shap": {
+      "author_after_committer": 0,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "wandb": {
+      "author_after_committer": 1,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "dvc": {
+      "author_after_committer": 3,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 6,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "bentoml": {
+      "author_after_committer": 1,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "onnx": {
+      "author_after_committer": 10,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "onnxruntime": {
+      "author_after_committer": 7,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 0,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "spacy": {
+      "author_after_committer": 12,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 3,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    },
+    "gensim": {
+      "author_after_committer": 3,
+      "author_after_observed": 0,
+      "child_committer_before_parent": 2,
+      "committer_after_observed": 0,
+      "unrepresentable_author_date": 0,
+      "unrepresentable_committer_date": 0
+    }
+  },
+  "git_tool_tips": {
+    "pytorch": "2447ef3dc28dad2000dcebaf713eef7574a2f476",
+    "tensorflow": "81aa77514e8d845b5852d869a61621e5a4c52036",
+    "transformers": "26754696fdbcdc356f07bf9762fc364923a9b71f",
+    "scikit-learn": "4dc45d9a0afa48d741fe5924f167a236d8605210",
+    "xgboost": "32ad5c3f5ffce65bd5fdde87f73e4e45dfa25753",
+    "lightgbm": "3ee03c26ba8c9e8ddc05fa8687717cae8a7d61d9",
+    "langchain": "2775506076baf2cba8126b21b9e63424fcd97ab9",
+    "llama-index": "619d74664e8404612038bc15a1a40c686037277c",
+    "mlflow": "528eff9cc9d2cf285395414a7a1135640d477963",
+    "ray": "8b69afe2615fbc35c62a0d43fc4f98cf46b4b7a7",
+    "jax": "c324243af674e507522f3135f91f006b0e6971a6",
+    "flax": "e937d47c6b4a9eb27168c266539ded510cd5880b",
+    "keras": "df66bffce85194fff9d188b60cccd46aec2f6d99",
+    "pytorch-lightning": "84df182f50ab34301aabb3c0eb4031815bfb413d",
+    "accelerate": "f47439c1fb24721ea71ab98f9b512726b5a97828",
+    "datasets": "62e0b421bb996e8536d28f4fea662a4045bab82d",
+    "diffusers": "86ef420b17363c28e36ebad6b58555e9aa8feda2",
+    "sentence-transformers": "6994c94f39a3ff30f21075af1eca46d3ac5e8a8d",
+    "peft": "cbd0fbc51045e5f29184e609ad34ad69ff40d1f3",
+    "trl": "0735a10bd1d3f102f8683d4f09ea2c156b7f2ccb",
+    "optuna": "8c615f0404e4cd41dca763c6de235af7e36b75d5",
+    "catboost": "3bd4b03bb94101f6514b31ddabdbc2df4ab17381",
+    "shap": "8dfb52703e0f2e96e6539c8f8b74400ef281bb69",
+    "wandb": "88023ee0d8a6f39678fbc8eb5df15dd24ffa9140",
+    "dvc": "56e59829512ff134aa269099a2099587b810b4dd",
+    "bentoml": "942344be7860065736f9d615de517ef043db2665",
+    "onnx": "4b1d130648d119ad1fc44410e5ba06bb64d12691",
+    "onnxruntime": "f42c839f56e450ff1a433407eb7c6a16f568175f",
+    "spacy": "7ff14d4da84817f84c32b980882178ddacc066a1",
+    "gensim": "37f90ec121eb7cd401448a947e80953e0c53ccdc"
+  },
+  "model_selection": "none; no winner promotion; original primary selection is unchanged",
+  "primary_selected_model_unchanged": "histgb_dl_release",
+  "row_audit": {
+    "primary_panel_rows": 6000,
+    "git_history_eligible_rows": 5910,
+    "prediction_rows": 28050,
+    "models": [
+      "histgb_dl_release_common",
+      "histgb_dl_release_git",
+      "published_histgb_dl",
+      "published_histgb_dl_release",
+      "published_persistence",
+      "published_ridge_dl",
+      "published_ridge_dl_release",
+      "published_training_median",
+      "published_trend8",
+      "ridge_dl_release_common",
+      "ridge_dl_release_git"
+    ],
+    "monthly_folds": 20
+  },
+  "source_limits": [
+    "Current reachable history can omit deleted branches, force-pushed commits and removed repositories.",
+    "Author and committer dates are supplied by commit creators and may be reordered, backdated or future-dated; anomaly counts are retained.",
+    "Commit date does not certify its historical public availability or the time it joined the default branch. No real-time vintage is reconstructed.",
+    "First-parent counts describe surviving mainline commits under the current graph; merge strategies differ between projects.",
+    "Null counts before the first retained commit are unknown; zero later means no matching surviving commit by this date definition, not no development.",
+    "This independent retrospective source is excluded from existing primary forecasting recipes."
+  ],
+  "primary_mutated": false
+}

@@ -7,3 +7,17 @@
 *.duckdb
 *.duckdb.wal
 __pycache__/
+
+# Runtime logs, backups, and private configuration
+/logs/
+/backups/
+/secrets/
+.env
+.env.*
+*.service-account.json
+
+# Coursework documents are stored outside this repository
+/proposal/
+/report/
+/project_rubric.md
+/study/report_study.py

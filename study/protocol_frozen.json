@@ -1,0 +1,40 @@
+{
+  "frozen_at": "2026-11-02T20:56:49.461114+00:00",
+  "study": "AI Technology Radar conditional 30-tool retrospective study",
+  "amendments_before_actual_model_results": [
+    "Two-day source-availability lag followed by first full outcome week: t+2..t+9, one gap week after feature t.",
+    "Select model only on 2025-origin outcomes available by 2026-01-01 UTC. Later-2025 labels are descriptive validation only.",
+    "Historical research/dependency signals excluded until version availability and relevance validated. Primary study tests PyPI, GH events and release metadata."
+  ],
+  "cohort_size": 30,
+  "query_budget_usd_total": 80,
+  "max_total_query_bytes": 13194139533312,
+  "training": "Expanding chronological monthly fits, >=52 mature training weeks; train labels available by fold cutoff; train-only imputation/scaling",
+  "models": [
+    "persistence",
+    "past_trend",
+    "ridge_gh",
+    "ridge_dl",
+    "ridge_dl_gh",
+    "ridge_dl_gh_release",
+    "histgb_dl_gh_release"
+  ],
+  "selection_metric": "MAE on mature-before-2026 subset only",
+  "evaluation": [
+    "2025-origin descriptive metrics",
+    "2026-origin operational holdout with chronological refits"
+  ],
+  "uncertainty": "paired 8-week moving-block bootstrap, 1000 draws, descriptive within-cohort interval",
+  "not_identified": [
+    "causality",
+    "unique users",
+    "retention",
+    "unseen-tool generalization",
+    "real-time as-of source vintages"
+  ],
+  "source_code_sha256": {
+    "build_weekly.py": "1f7ea10f947c1b20de07a16e0368988f9c48aab970f24986092e55e3f25c9bea",
+    "model_study.py": "2d662b1bc1aa5e7657a470cb5dc5271d4cc7616a7b77796bd38fec00832071f2",
+    "tools.study.json": "f89567ca699597ce9cddc6ac52efa718c4a2310cf06078724f1e5655d6caaf4c"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "train_cutoff": "2026-11-03T01:25:21.455306+00:00",
+  "train_row_count": 5480,
+  "train_week_count": 183,
+  "maximum_training_label_available_at": "2026-10-28T00:00:00+00:00",
+  "best_model_selected_from_2025": "histgb_dl_release",
+  "models": [
+    "ridge_dl",
+    "ridge_dl_release",
+    "histgb_dl",
+    "histgb_dl_release"
+  ],
+  "baselines": {
+    "persistence": 0.0,
+    "training_median": 0.06995880779062702,
+    "trend8": "fixed OLS extrapolation of eight historical log-download counts"
+  }
+}
